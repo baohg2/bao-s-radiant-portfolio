@@ -46,7 +46,7 @@ const About = () => {
         <div className="md:col-span-3">
           <div className="space-y-4 text-base leading-relaxed text-foreground/80 md:text-lg">
             <p>
-              I'm <strong className="text-foreground">Bao Haong</strong>, a Business Analyst who
+              I'm <strong className="text-foreground">Bao Hoang</strong>, a Business Analyst who
               loves the messy middle — the part where data, people, and process meet. I've spent
               the last few years helping product, ops and growth teams find the signal in noisy
               dashboards and turn it into roadmaps that actually ship.
