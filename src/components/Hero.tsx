@@ -65,7 +65,7 @@ const Hero = () => {
           className="font-display text-5xl font-medium leading-[1.05] tracking-tight md:text-7xl lg:text-[5.5rem] animate-fade-in-up"
           style={{ animationDelay: "0.25s" }}
         >
-          Hi, I'm <span className="text-gradient">Bao Haong</span>
+          Hi, I'm <span className="text-gradient">Bao Hoang</span>
           <br />
           <span className="block pt-3 typewriter-cursor text-foreground/85" aria-live="polite">
             {typed || "\u00A0"}

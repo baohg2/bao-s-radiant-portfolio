@@ -36,7 +36,7 @@ const Index = () => {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "Bao Haong",
+            name: "Bao Hoang",
             jobTitle: "Business Analyst",
             description:
               "Business Analyst translating data into strategy, dashboards, and measurable outcomes.",

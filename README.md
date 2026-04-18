@@ -1,4 +1,4 @@
-# Bao Haong — Business Analyst Portfolio
+# Bao Hoang — Business Analyst Portfolio
 
 A single-page portfolio with organic soft gradients, pastel tones, glassmorphism cards, particle background, parallax sections, typewriter intro, and scroll-triggered animations. Built with React + Vite + Tailwind CSS.
 

@@ -45,14 +45,14 @@ const Contact = () => {
             <ul className="mt-6 space-y-3">
               <li>
                 <a
-                  href="mailto:hello@baohaong.com"
+                  href="mailto:hello@baohoang.com"
                   className="group flex items-center gap-3 rounded-2xl bg-foreground/5 p-3 transition-colors hover:bg-primary/10"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground">
                     <Mail className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground">
-                    hello@baohaong.com
+                    hello@baohoang.com
                   </span>
                 </a>
               </li>
@@ -67,7 +67,7 @@ const Contact = () => {
                     <Linkedin className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground">
-                    linkedin.com/in/baohaong
+                    linkedin.com/in/baohoang
                   </span>
                 </a>
               </li>
@@ -82,7 +82,7 @@ const Contact = () => {
                     <Github className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground">
-                    github.com/baohaong
+                    github.com/baohoang
                   </span>
                 </a>
               </li>
