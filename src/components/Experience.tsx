@@ -31,7 +31,7 @@ const timeline = [
     role: "Senior Analyst",
     company: "ASART Deal Advisory",
     location: "Ho Chi Minh, Vietnam",
-    tags: ["M&A Valuation", "Financial Modeling", "Deal Origination", "Market Research"],
+    tags: ["M&A Valuation", "Financial Modeling", "Diagnostic Report", "Market Research"],
     points: [
       "Participated in M&A valuation including financial modelling for a 50M AUD hospital and healthcare group, and delivered diagnostic reports and fairness opinions across F&B and manufacturing sectors to support client decision-making.",
       "Developed internal knowledge management systems, including a structured target search database, target company profiles and industry research reports that improved research efficiency for deal origination.",
