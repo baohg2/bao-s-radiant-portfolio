@@ -44,7 +44,7 @@ const Skills = () => {
       <SectionHeading
         eyebrow="Skills"
         title="A balanced toolkit."
-        description="Hard skills for the analysis, soft skills for the alignment — both matter equally."
+        description="Hard skills for the analysis, domain skills for the execution—both matter equally."
       />
 
       <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-3">
