@@ -1,42 +1,47 @@
 /**
  * Projects — glass cards with hover micro-interactions and staggered reveal.
+ * Pulls from user's real GitHub projects.
  */
-import { ArrowUpRight, BarChart3, Boxes, ShoppingBag, Workflow } from "lucide-react";
+import { ArrowUpRight, BarChart3, CreditCard, Home, ShoppingBag } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
     icon: BarChart3,
-    title: "Revenue Insights Dashboard",
+    title: "Australia Demographic Dashboard",
     summary:
-      "Unified 6 disconnected reports into a single executive dashboard, cutting weekly review time by 70%.",
-    tags: ["SQL", "Power BI", "DAX"],
+      "A data analytics project exploring how Australia's population composition changed over two decades from migration origin and age structure to regional distribution.",
+    tags: ["R / Excel", "Demographics", "Data Analytics"],
     accent: "from-pastel-lavender to-pastel-rose",
+    url: "https://github.com/baohg2/Australia-Demographic-Dashboard",
   },
   {
     icon: ShoppingBag,
-    title: "Checkout Funnel Analysis",
+    title: "DIBS Sales Analysis & Modeling",
     summary:
-      "Identified a 14% drop-off at address validation; A/B test recovered $1.2M in projected annual revenue.",
-    tags: ["A/B Testing", "Mixpanel", "SQL"],
+      "A data-driven analysis of DIBS Retail Company's sales performance, uncovering customer behavior trends and building predictive models to forecast sales.",
+    tags: ["R", "Predictive Modeling", "Sales Analytics", "Regression"],
     accent: "from-pastel-peach to-pastel-butter",
+    url: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling",
   },
   {
-    icon: Workflow,
-    title: "Ops Automation Blueprint",
+    icon: CreditCard,
+    title: "Credit Card Default Prediction",
     summary:
-      "Mapped a 23-step manual workflow and designed an automation roadmap, saving the ops team 35 hours/week.",
-    tags: ["Process Mapping", "BPMN", "Stakeholders"],
+      "Develops a predictive machine learning framework to identify credit card default risks using a dataset of 10,000 customers and 23 financial features.",
+    tags: ["Python", "Machine Learning", "Credit Risk", "Classification"],
     accent: "from-pastel-mint to-pastel-sky",
+    url: "https://github.com/baohg2/Predictive-Analysis-of-Credit-Card-Defaults",
   },
   {
-    icon: Boxes,
-    title: "Inventory Forecast Model",
+    icon: Home,
+    title: "Airbnb Price Prediction",
     summary:
-      "Built a lightweight forecasting tool used by 4 regional managers, reducing stockouts by 28%.",
-    tags: ["Python", "Forecasting", "Excel"],
+      "A data cleaning and predictive modeling project targeting Airbnb listing price dynamics in Melbourne, Australia to identify key valuation drivers.",
+    tags: ["Python", "Data Cleaning", "Price Valuation", "Regression"],
     accent: "from-pastel-sky to-pastel-lavender",
+    url: "https://github.com/baohg2/Airbnb---Predict-listing-prices-in-Melbourne-Australia",
   },
 ];
 
@@ -64,14 +69,17 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({ project, delay }: ProjectCardProps) => {
-  const { ref, isVisible } = useScrollReveal<HTMLElement>();
+  const { ref, isVisible } = useScrollReveal<HTMLAnchorElement>();
   const Icon = project.icon;
 
   return (
-    <article
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noreferrer noopener"
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
-      className={`group glass-card hover-lift relative overflow-hidden rounded-[2rem] p-7 transition-all duration-700 ${
+      className={`group block glass-card hover-lift relative overflow-hidden rounded-[2rem] p-7 transition-all duration-700 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
     >
@@ -103,14 +111,14 @@ const ProjectCard = ({ project, delay }: ProjectCardProps) => {
         </div>
 
         <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-          Case study
+          View Repository
           <ArrowUpRight
             className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             aria-hidden="true"
           />
         </div>
       </div>
-    </article>
+    </a>
   );
 };
 
