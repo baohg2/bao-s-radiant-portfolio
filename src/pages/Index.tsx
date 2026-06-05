@@ -23,6 +23,19 @@ const Index = () => {
     return () => cancelAnimationFrame(id);
   }, []);
 
+  useEffect(() => {
+    if (mounted && window.location.hash) {
+      const hashId = window.location.hash.substring(1);
+      const element = document.getElementById(hashId);
+      if (element) {
+        const timer = setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [mounted]);
+
   return (
     <div
       className={`relative min-h-screen overflow-x-clip transition-opacity duration-700 ${
