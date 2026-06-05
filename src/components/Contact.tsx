@@ -2,7 +2,7 @@
  * Contact — glass form (client-side only) with social links.
  */
 import { useState } from "react";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Send } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import { useToast } from "@/hooks/use-toast";
 
@@ -67,7 +67,7 @@ const Contact = () => {
                     <Linkedin className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground">
-                    linkedin.com/in/baohoang-3
+                    Bao Hoang
                   </span>
                 </a>
               </li>
@@ -83,6 +83,19 @@ const Contact = () => {
                   </span>
                   <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground">
                     github.com/baohg2
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:0402248591"
+                  className="group flex items-center gap-3 rounded-2xl bg-foreground/5 p-3 transition-colors hover:bg-primary/10"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-primary text-primary-foreground">
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                  </span>
+                  <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground">
+                    0402 248 591
                   </span>
                 </a>
               </li>
