@@ -6,32 +6,36 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const timeline = [
   {
-    period: "2023 — Present",
-    role: "Senior Business Analyst",
-    company: "Lumen Retail Group",
-    summary:
-      "Lead analyst for the digital storefront. Own the analytics roadmap, partner with product on experimentation, and mentor 2 junior BAs.",
+    period: "Oct 2022 – Jan 2024",
+    role: "Cash Flow – Credit Assistant",
+    company: "Dai Quang Minh Real Estate Investment Corporation",
+    location: "Ho Chi Minh, Vietnam",
+    points: [
+      "Consolidated cash flow data from 4 subsidiaries and departments into monthly financial planning report for CFO and Group Head Office review and approval. Performed budget vs actuals report of monthly cash flow and loan reports.",
+      "Monitored daily cash positions across the group, ensuring uninterrupted funding for operations and 200M AUD construction investments.",
+      "Managed end-to-end loan drawdown process for both short- and long-term facilities, maintaining 100% compliance with covenant undertakings.",
+    ],
   },
   {
-    period: "2021 — 2023",
-    role: "Business Analyst",
-    company: "Northwind SaaS",
-    summary:
-      "Translated complex billing requirements into shippable specs and designed the company's first self-serve revenue dashboard.",
+    period: "Dec 2019 – Jan 2021",
+    role: "Senior Analyst",
+    company: "ASART Deal Advisory",
+    location: "Ho Chi Minh, Vietnam",
+    points: [
+      "Participated in M&A valuation including financial modelling for a 50M AUD hospital and healthcare group, and delivered diagnostic reports and fairness opinions across F&B and manufacturing sectors to support client decision-making.",
+      "Developed internal knowledge management systems, including a structured target search database, target company profiles and industry research reports that improved research efficiency for deal origination.",
+    ],
   },
   {
-    period: "2019 — 2021",
-    role: "Data & Operations Analyst",
-    company: "Aria Logistics",
-    summary:
-      "Automated weekly ops reporting and supported the rollout of a new WMS across 4 warehouses.",
-  },
-  {
-    period: "2018 — 2019",
-    role: "BA Intern → Junior Analyst",
-    company: "Vela Consulting",
-    summary:
-      "Cut my teeth on requirements gathering, process mapping, and very thorough Excel models.",
+    period: "Sep 2017 – Nov 2019",
+    role: "Audit Assistant – Core Assurance",
+    company: "EY Vietnam",
+    location: "Ho Chi Minh, Vietnam",
+    points: [
+      "Executed 20+ full-cycle audit engagements across diverse sectors (Construction, Manufacturing, Trading, Healthcare), ensuring strict adherence to accounting standards.",
+      "Assessed clients’ cash receipt-disbursement, purchase & payable, sales & receivable, payroll processes to identify controls, perform tests and evaluate the operation effectiveness of the controls.",
+      "Examined sections of the balance sheet and profit & loss statement to verify data accuracy following audit procedures, identified, and communicated accounting and auditing matters to seniors and managers.",
+    ],
   },
 ];
 
@@ -40,8 +44,8 @@ const Experience = () => {
     <section id="experience" className="section-padding relative bg-gradient-soft">
       <SectionHeading
         eyebrow="Experience"
-        title="A path shaped by curiosity."
-        description="Each role built on the last — more data, more stakeholders, more ownership."
+        title="A path shaped by finance & strategy."
+        description="A track record of managing cash flows, executing M&A valuations, and leading audit engagements."
       />
 
       <ol className="relative mx-auto max-w-3xl pl-6 md:pl-0">
@@ -86,10 +90,22 @@ const TimelineItem = ({
           isRight ? "md:col-start-2" : "md:col-start-1"
         }`}
       >
-        <p className="font-mono text-xs uppercase tracking-wider text-primary">{item.period}</p>
+        <div className="flex flex-wrap items-center justify-between gap-1">
+          <p className="font-mono text-xs uppercase tracking-wider text-primary">{item.period}</p>
+          {item.location && (
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground/80">{item.location}</p>
+          )}
+        </div>
         <h3 className="mt-2 font-display text-xl font-medium tracking-tight">{item.role}</h3>
         <p className="text-sm font-medium text-foreground/70">{item.company}</p>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.summary}</p>
+        <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-muted-foreground">
+          {item.points.map((point, index) => (
+            <li key={index} className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </li>
   );
