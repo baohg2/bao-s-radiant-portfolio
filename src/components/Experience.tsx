@@ -60,7 +60,7 @@ const Experience = () => {
         description="From audit engagement to financial valuation and cash flow management."
       />
 
-      <ol className="relative mx-auto max-w-3xl pl-6 md:pl-0">
+      <ol className="relative mx-auto max-w-5xl pl-6 md:pl-0">
         {/* Center line on md+ */}
         <span
           aria-hidden="true"
