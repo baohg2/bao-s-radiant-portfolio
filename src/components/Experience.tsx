@@ -45,7 +45,7 @@ const Experience = () => {
       <SectionHeading
         eyebrow="Experience"
         title="A path shaped by finance & strategy."
-        description="A track record of managing cash flows, executing M&A valuations, and leading audit engagements."
+        description="From audit engagement to financial valuation and cash flow management."
       />
 
       <ol className="relative mx-auto max-w-3xl pl-6 md:pl-0">
