@@ -1,7 +1,6 @@
 /**
  * Experience — vertical timeline with reveal-on-scroll milestones.
  * Supports keywords/tags for scannability, and a detailed achievements modal popup.
- * Single-column left-aligned layout on all screen sizes to prevent wrapping.
  */
 import SectionHeading from "./SectionHeading";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -61,11 +60,11 @@ const Experience = () => {
         description="From audit engagement to financial valuation and cash flow management."
       />
 
-      <ol className="relative mx-auto max-w-4xl pl-8 md:pl-12">
-        {/* Left vertical line */}
+      <ol className="relative mx-auto max-w-6xl pl-6 md:pl-0">
+        {/* Center line on md+ */}
         <span
           aria-hidden="true"
-          className="absolute left-4 md:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent"
+          className="absolute left-2 top-2 bottom-2 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent md:left-1/2 md:-translate-x-1/2"
         />
         {timeline.map((item, i) => (
           <TimelineItem key={item.role} item={item} index={i} />
@@ -83,22 +82,27 @@ const TimelineItem = ({
   index: number;
 }) => {
   const { ref, isVisible } = useScrollReveal<HTMLLIElement>();
+  const isRight = index % 2 === 1;
 
   return (
     <li
       ref={ref}
-      className={`relative mb-10 md:mb-12 pl-6 md:pl-10 ${
+      className={`relative mb-10 md:mb-14 md:grid md:grid-cols-2 md:gap-8 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
       } transition-all duration-700`}
     >
-      {/* Dot aligned to the left vertical line */}
+      {/* Dot */}
       <span
         aria-hidden="true"
-        className="absolute left-4 md:left-6 top-4 h-3.5 w-3.5 -translate-x-1/2 rounded-full bg-gradient-primary shadow-glow"
+        className="absolute left-[-1.4rem] top-3 h-3 w-3 rounded-full bg-gradient-primary shadow-glow md:left-1/2 md:-translate-x-1/2"
       />
 
       <Dialog>
-        <div className="glass-card hover-lift rounded-[1.5rem] p-7 flex flex-col justify-between w-full">
+        <div
+          className={`glass-card hover-lift rounded-[1.5rem] p-6 flex flex-col justify-between ${
+            isRight ? "md:col-start-2" : "md:col-start-1"
+          }`}
+        >
           <div>
             <div className="flex flex-wrap items-center justify-between gap-1">
               <p className="font-mono text-sm uppercase tracking-wider text-primary font-medium">{item.period}</p>
