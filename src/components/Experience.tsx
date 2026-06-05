@@ -99,26 +99,26 @@ const TimelineItem = ({
 
       <Dialog>
         <div
-          className={`glass-card hover-lift rounded-[1.5rem] p-6 flex flex-col justify-between ${
+          className={`glass-card hover-lift rounded-[1.5rem] p-7 flex flex-col justify-between ${
             isRight ? "md:col-start-2" : "md:col-start-1"
           }`}
         >
           <div>
             <div className="flex flex-wrap items-center justify-between gap-1">
-              <p className="font-mono text-xs uppercase tracking-wider text-primary">{item.period}</p>
+              <p className="font-mono text-sm uppercase tracking-wider text-primary font-medium">{item.period}</p>
               {item.location && (
-                <p className="text-[10px] uppercase tracking-wider text-muted-foreground/85">{item.location}</p>
+                <p className="text-xs uppercase tracking-wider text-muted-foreground/80 font-medium">{item.location}</p>
               )}
             </div>
-            <h3 className="mt-2 font-display text-xl font-medium tracking-tight">{item.role}</h3>
-            <p className="text-sm font-medium text-foreground/70">{item.company}</p>
+            <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight">{item.role}</h3>
+            <p className="text-base font-semibold text-foreground/75 mt-0.5">{item.company}</p>
             
             {/* Tags/Keywords for scannability */}
-            <div className="mt-4 flex flex-wrap gap-1.5">
+            <div className="mt-5 flex flex-wrap gap-2">
               {item.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full bg-primary/5 px-2.5 py-0.5 text-xs font-medium text-primary/80 border border-primary/10"
+                  className="rounded-full bg-primary/5 px-3 py-1 text-xs font-semibold text-primary/90 border border-primary/10"
                 >
                   {tag}
                 </span>
@@ -127,40 +127,40 @@ const TimelineItem = ({
           </div>
 
           <DialogTrigger asChild>
-            <button className="mt-5 self-start inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline transition-all duration-300">
+            <button className="mt-6 self-start inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:underline transition-all duration-300">
               View detailed achievements
-              <ArrowUpRight className="h-3.5 w-3.5 transition-transform" />
+              <ArrowUpRight className="h-4 w-4 transition-transform" />
             </button>
           </DialogTrigger>
         </div>
 
-        <DialogContent className="glass-card backdrop-blur-md border-primary/15 max-w-lg p-7">
+        <DialogContent className="glass-card backdrop-blur-md border-primary/15 max-w-xl md:max-w-2xl p-8">
           <DialogHeader>
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-foreground/10 pb-4">
               <div>
-                <DialogTitle className="font-display text-2xl font-semibold tracking-tight">
+                <DialogTitle className="font-display text-3xl font-bold tracking-tight">
                   {item.role}
                 </DialogTitle>
-                <p className="text-sm font-medium text-foreground/75 mt-0.5">{item.company}</p>
+                <p className="text-lg font-semibold text-foreground/80 mt-1">{item.company}</p>
               </div>
               <div className="text-left md:text-right">
-                <p className="font-mono text-xs text-primary">{item.period}</p>
+                <p className="font-mono text-sm font-semibold text-primary">{item.period}</p>
                 {item.location && (
-                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground/80 mt-0.5">
+                  <p className="text-xs uppercase tracking-wider text-muted-foreground/80 mt-1 font-medium">
                     {item.location}
                   </p>
                 )}
               </div>
             </div>
           </DialogHeader>
-          <div className="mt-4">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-primary/95 mb-3">
+          <div className="mt-5">
+            <h4 className="text-sm font-bold uppercase tracking-wider text-primary/90 mb-3">
               Key Achievements & Responsibilities
             </h4>
-            <ul className="space-y-3.5 text-sm leading-relaxed text-muted-foreground">
+            <ul className="space-y-4 text-base leading-relaxed text-muted-foreground">
               {item.points.map((point, index) => (
-                <li key={index} className="flex items-start gap-2.5">
-                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
+                <li key={index} className="flex items-start gap-3">
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
                   <span className="text-foreground/90">{point}</span>
                 </li>
               ))}
