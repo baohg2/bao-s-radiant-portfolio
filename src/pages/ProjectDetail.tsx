@@ -37,7 +37,7 @@ const ProjectDetail = () => {
             className="inline-flex items-center gap-2 text-slate-800 font-semibold hover:text-slate-900 transition-colors mb-8 group"
           >
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
-            Back to Home
+            Back to Projects
           </Link>
 
           {/* Title and Subtitle */}
