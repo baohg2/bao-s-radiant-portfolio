@@ -1,8 +1,17 @@
 /**
  * Experience — vertical timeline with reveal-on-scroll milestones.
+ * Supports keywords/tags for scannability, and a detailed achievements modal popup.
  */
 import SectionHeading from "./SectionHeading";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ArrowUpRight } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const timeline = [
   {
@@ -10,6 +19,7 @@ const timeline = [
     role: "Cash Flow – Credit Assistant",
     company: "Dai Quang Minh Real Estate Investment Corporation",
     location: "Ho Chi Minh, Vietnam",
+    tags: ["Cash Flow Planning", "Budget vs Actuals", "Liquidity Management", "Loan Drawdowns"],
     points: [
       "Consolidated cash flow data from 4 subsidiaries and departments into monthly financial planning report for CFO and Group Head Office review and approval. Performed budget vs actuals report of monthly cash flow and loan reports.",
       "Monitored daily cash positions across the group, ensuring uninterrupted funding for operations and 200M AUD construction investments.",
@@ -21,6 +31,7 @@ const timeline = [
     role: "Senior Analyst",
     company: "ASART Deal Advisory",
     location: "Ho Chi Minh, Vietnam",
+    tags: ["M&A Valuation", "Financial Modeling", "Deal Origination", "Market Research"],
     points: [
       "Participated in M&A valuation including financial modelling for a 50M AUD hospital and healthcare group, and delivered diagnostic reports and fairness opinions across F&B and manufacturing sectors to support client decision-making.",
       "Developed internal knowledge management systems, including a structured target search database, target company profiles and industry research reports that improved research efficiency for deal origination.",
@@ -31,6 +42,7 @@ const timeline = [
     role: "Audit Assistant – Core Assurance",
     company: "EY Vietnam",
     location: "Ho Chi Minh, Vietnam",
+    tags: ["Financial Audit", "Internal Controls", "Risk Assessment", "P&L Examination"],
     points: [
       "Executed 20+ full-cycle audit engagements across diverse sectors (Construction, Manufacturing, Trading, Healthcare), ensuring strict adherence to accounting standards.",
       "Assessed clients’ cash receipt-disbursement, purchase & payable, sales & receivable, payroll processes to identify controls, perform tests and evaluate the operation effectiveness of the controls.",
@@ -85,28 +97,77 @@ const TimelineItem = ({
         className="absolute left-[-1.4rem] top-3 h-3 w-3 rounded-full bg-gradient-primary shadow-glow md:left-1/2 md:-translate-x-1/2"
       />
 
-      <div
-        className={`glass-card hover-lift rounded-[1.5rem] p-6 ${
-          isRight ? "md:col-start-2" : "md:col-start-1"
-        }`}
-      >
-        <div className="flex flex-wrap items-center justify-between gap-1">
-          <p className="font-mono text-xs uppercase tracking-wider text-primary">{item.period}</p>
-          {item.location && (
-            <p className="text-[10px] uppercase tracking-wider text-muted-foreground/80">{item.location}</p>
-          )}
+      <Dialog>
+        <div
+          className={`glass-card hover-lift rounded-[1.5rem] p-6 flex flex-col justify-between ${
+            isRight ? "md:col-start-2" : "md:col-start-1"
+          }`}
+        >
+          <div>
+            <div className="flex flex-wrap items-center justify-between gap-1">
+              <p className="font-mono text-xs uppercase tracking-wider text-primary">{item.period}</p>
+              {item.location && (
+                <p className="text-[10px] uppercase tracking-wider text-muted-foreground/85">{item.location}</p>
+              )}
+            </div>
+            <h3 className="mt-2 font-display text-xl font-medium tracking-tight">{item.role}</h3>
+            <p className="text-sm font-medium text-foreground/70">{item.company}</p>
+            
+            {/* Tags/Keywords for scannability */}
+            <div className="mt-4 flex flex-wrap gap-1.5">
+              {item.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full bg-primary/5 px-2.5 py-0.5 text-xs font-medium text-primary/80 border border-primary/10"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <DialogTrigger asChild>
+            <button className="mt-5 self-start inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline transition-all duration-300">
+              View detailed achievements
+              <ArrowUpRight className="h-3.5 w-3.5 transition-transform" />
+            </button>
+          </DialogTrigger>
         </div>
-        <h3 className="mt-2 font-display text-xl font-medium tracking-tight">{item.role}</h3>
-        <p className="text-sm font-medium text-foreground/70">{item.company}</p>
-        <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-muted-foreground">
-          {item.points.map((point, index) => (
-            <li key={index} className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+        <DialogContent className="glass-card backdrop-blur-md border-primary/15 max-w-lg p-7">
+          <DialogHeader>
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-foreground/10 pb-4">
+              <div>
+                <DialogTitle className="font-display text-2xl font-semibold tracking-tight">
+                  {item.role}
+                </DialogTitle>
+                <p className="text-sm font-medium text-foreground/75 mt-0.5">{item.company}</p>
+              </div>
+              <div className="text-left md:text-right">
+                <p className="font-mono text-xs text-primary">{item.period}</p>
+                {item.location && (
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground/80 mt-0.5">
+                    {item.location}
+                  </p>
+                )}
+              </div>
+            </div>
+          </DialogHeader>
+          <div className="mt-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-primary/95 mb-3">
+              Key Achievements & Responsibilities
+            </h4>
+            <ul className="space-y-3.5 text-sm leading-relaxed text-muted-foreground">
+              {item.points.map((point, index) => (
+                <li key={index} className="flex items-start gap-2.5">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/50" />
+                  <span className="text-foreground/90">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </DialogContent>
+      </Dialog>
     </li>
   );
 };
