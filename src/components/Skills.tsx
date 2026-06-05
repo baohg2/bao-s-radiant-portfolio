@@ -6,30 +6,34 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const groups = [
   {
-    title: "Analysis & Data",
+    title: "Programming Language & Tools",
     items: [
+      { name: "Excel", level: 95 },
       { name: "SQL", level: 92 },
-      { name: "Power BI / Tableau", level: 88 },
-      { name: "Python (pandas)", level: 75 },
-      { name: "Excel / Sheets", level: 95 },
+      { name: "Power BI (DAX)", level: 90 },
+      { name: "Python", level: 85 },
+      { name: "R", level: 78 },
+      { name: "MongoDB", level: 75 },
     ],
   },
   {
-    title: "Business & Process",
+    title: "Data Analytics",
     items: [
-      { name: "Requirements Gathering", level: 94 },
-      { name: "Process Mapping (BPMN)", level: 86 },
-      { name: "User Stories & Acceptance", level: 90 },
-      { name: "Stakeholder Workshops", level: 88 },
+      { name: "Dashboard Automation", level: 92 },
+      { name: "Customer Segmentation", level: 88 },
+      { name: "Predictive Modeling", level: 86 },
+      { name: "Data Imputation", level: 84 },
+      { name: "Machine Learning", level: 80 },
     ],
   },
   {
-    title: "Tools & Methods",
+    title: "Business & Financial",
     items: [
-      { name: "Jira / Confluence", level: 92 },
-      { name: "Figma", level: 70 },
-      { name: "A/B Testing", level: 80 },
-      { name: "Agile / Scrum", level: 90 },
+      { name: "Cash Flow Management", level: 94 },
+      { name: "Financial Modeling", level: 92 },
+      { name: "Loan Drawdowns", level: 90 },
+      { name: "Loan Management", level: 88 },
+      { name: "Auditing", level: 85 },
     ],
   },
 ];
