@@ -27,7 +27,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
   "australia-demographics": {
     id: "australia-demographics",
     title: "Australia’s Demographic Transformation (1996–2016)",
-    subtitle: "Uncovers how migration, age structure, gender composition and regional settlement shifted between 1996 and 2016, and highlights implications for infrastructure, workforce planning and public policy.",
+    subtitle: "A data analytics project exploring how Australia's population composition changed over two decades from migration origin and age structure to regional distribution and workforce implications.",
     primaryLink: "https://github.com/baohg2/Australia-Demographic-Dashboard",
     primaryLinkLabel: "View Full Report",
     secondaryLink: "https://github.com/baohg2/Australia-Demographic-Dashboard", // Keep it pointing to repo if dashboard is not separate

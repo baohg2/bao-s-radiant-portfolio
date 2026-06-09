@@ -13,7 +13,7 @@ const projects = [
     icon: BarChart3,
     title: "Australia Demographic Dashboard",
     summary:
-      "A data analytics project exploring how Australia's population composition changed over two decades from migration origin and age structure to regional distribution.",
+      "A data analytics project exploring how Australia's population composition changed over two decades from migration origin and age structure to regional distribution and workforce implications.",
     tags: ["R / Excel", "Demographics", "Data Analytics"],
     accent: "from-pastel-lavender to-pastel-rose",
   },
