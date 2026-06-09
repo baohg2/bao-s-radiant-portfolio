@@ -15,6 +15,11 @@ export interface ProjectDetailData {
     title: string;
     description: string;
   }[];
+  dashboards?: {
+    title: string;
+    subtitle: string;
+    points: string[];
+  }[];
 }
 
 export const projectDetails: Record<string, ProjectDetailData> = {
@@ -61,6 +66,19 @@ export const projectDetails: Record<string, ProjectDetailData> = {
       {
         title: "Highlighted a growing split between young migrants and ageing settlers",
         description: "71% of Asian-born migrants are of working age, helping fill labour gaps across the economy. Meanwhile, 78% of European-born migrants are elderly, adding pressure on aged care services alongside a domestic ageing trend."
+      }
+    ],
+    dashboards: [
+      {
+        title: "Dashboard 1 — Australia's Population Overview 1996–2016",
+        subtitle: "Population growth, gender distribution, age group breakdown, population pyramid, and geographic distribution.",
+        points: [
+          "Population grew from 18M to 24M (+33%), with the fastest growth period between 2006–2011 at 9.24%, driven by immigration and urbanisation",
+          "Working-age group (25–64) made up 53% of the population in 2016, but the elderly share quietly climbed from 12% to 15%, signalling future pressure on healthcare and pensions",
+          "The population pyramid shifted over time, wider at older age groups by 2016, reflecting falling birth rates and longer life expectancy",
+          "Gender split remained equal and stable throughout, consistent with a developed country's birth and mortality patterns",
+          "NSW and Victoria consistently led in population size, with Victoria overtaking Queensland as the second largest state in 2011, driven by urban migration and international settlement"
+        ]
       }
     ]
   },

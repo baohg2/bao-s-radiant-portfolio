@@ -138,6 +138,37 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Dashboards and Key Insights Section */}
+      {project.dashboards && project.dashboards.length > 0 && (
+        <div className="py-16 px-6 md:px-12 lg:px-24 bg-[#fdfbf7]/40 border-t border-border/40">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
+              Dashboards and Key Insights
+            </h2>
+            <div className="space-y-12">
+              {project.dashboards.map((dash, index) => (
+                <div key={index} className="glass-card rounded-[2rem] p-8 border-primary/10 shadow-sm max-w-4xl hover-lift">
+                  <h3 className="font-display text-2xl font-semibold text-foreground tracking-tight">
+                    {dash.title}
+                  </h3>
+                  <p className="text-sm font-semibold text-primary mt-1 mb-6 uppercase tracking-wider">
+                    {dash.subtitle}
+                  </p>
+                  <ul className="space-y-4 text-base leading-relaxed text-muted-foreground">
+                    {dash.points.map((pt, ptIndex) => (
+                      <li key={ptIndex} className="flex items-start gap-3">
+                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                        <span className="text-foreground/85">{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
