@@ -2,6 +2,7 @@ export interface ProjectDetailData {
   id: string;
   title: string;
   subtitle: string;
+  overview?: string;
   primaryLink: string;
   primaryLinkLabel: string;
   secondaryLink?: string;
@@ -132,7 +133,8 @@ export const projectDetails: Record<string, ProjectDetailData> = {
   "dibs-sales-analysis": {
     id: "dibs-sales-analysis",
     title: "Sales Analysis & Predictive Modeling",
-    subtitle: "Analyzed 186,894 historical online sales transactions to uncover patterns in customer behaviour, identify top and underperforming products, and develop a machine learning model capable of forecasting sales quantities. Findings are translated into actionable recommendations across inventory management, sales strategy, marketing, and market expansion.",
+    subtitle: "A data-driven analysis of DIBS Retail Company's sales performance, uncovering trends in customer behaviour and developing a predictive model to forecast sales quantities and support strategic decision-making.",
+    overview: "Analyzed 186,894 historical online sales transactions to uncover patterns in customer behaviour, identify top and underperforming products, and develop a machine learning model capable of forecasting sales quantities. Findings are translated into actionable recommendations across inventory management, sales strategy, marketing, and market expansion.",
     primaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling",
     primaryLinkLabel: "View Repository",
     secondaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling/blob/main/Report/DIBS%20-%20Sales%20Analysis%20and%20Predictive%20Modelling.pdf",
@@ -178,7 +180,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     ],
     dashboards: [
       {
-        title: "Dashboard 1 — Sales Analysis and Customer Behavior",
+        title: "1. Sales Analysis and Customer Behavior",
         subtitle: "Temporal trends, regional sales distribution, and customer purchase patterns.",
         image: "/dashboards/sales.png",
         points: [
@@ -188,7 +190,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         ]
       },
       {
-        title: "Dashboard 2 — Predictive Modeling",
+        title: "2. Predictive Modeling",
         subtitle: "K-Means product clustering and sales forecasting model comparison.",
         points: [
           "K-Means successfully grouped the 19 SKUs into Cluster 1 (high-turnover, low-price accessories) and Cluster 2 (low-turnover, premium-priced electronics).",
@@ -197,7 +199,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         ]
       },
       {
-        title: "Dashboard 3 — Insights and Recommendation",
+        title: "3. Insights and Recommendation",
         subtitle: "Actionable recommendations across inventory, sales, marketing, and market expansion.",
         points: [
           "Inventory Management — Use the Decision Tree model to forecast demand for peak seasons (Q4). Prioritise stock for high-turnover, low-price items (e.g. AAA Batteries). Review and reduce or discontinue low-performing SKUs such as LG Dryers.",
@@ -205,24 +207,6 @@ export const projectDetails: Record<string, ProjectDetailData> = {
           "Marketing — Focus campaigns on high-value regions (San Francisco, California) and peak ad windows. Use K-means cluster insights to personalise messaging for each product segment and implement cross-selling strategies.",
           "Market Expansion — Enter densely populated states proximate to existing markets - Florida, Pennsylvania, and Illinois - leveraging existing warehouse and logistics infrastructure."
         ]
-      }
-    ],
-    recommendations: [
-      {
-        title: "Inventory Management",
-        description: "Use the Decision Tree model to forecast demand for peak seasons (Q4). Prioritise stock for high-turnover, low-price items (e.g. AAA Batteries). Review and reduce or discontinue low-performing SKUs such as LG Dryers."
-      },
-      {
-        title: "Sales Strategy",
-        description: "Run targeted seasonal promotions in Q4 and time-limited flash sales during peak hours (11AM–1PM, 6PM–8PM). Bundle frequently co-purchased products (e.g. iPhone + Lightning Charging Cable)."
-      },
-      {
-        title: "Marketing",
-        description: "Focus campaigns on high-value regions (San Francisco, California) and peak ad windows. Use K-means cluster insights to personalise messaging for each product segment and implement cross-selling strategies."
-      },
-      {
-        title: "Market Expansion",
-        description: "Enter densely populated states proximate to existing markets - Florida, Pennsylvania, and Illinois - leveraging existing warehouse and logistics infrastructure."
       }
     ]
   },

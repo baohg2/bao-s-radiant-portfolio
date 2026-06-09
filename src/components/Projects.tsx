@@ -23,7 +23,7 @@ const projects = [
     icon: ShoppingBag,
     title: "Sales Analysis & Predictive Modeling",
     summary:
-      "Analyzed 186,894 historical online sales transactions to uncover patterns in customer behaviour, identify top and underperforming products, and develop a machine learning model capable of forecasting sales quantities. Findings are translated into actionable recommendations across inventory management, sales strategy, marketing, and market expansion.",
+      "A data-driven analysis of DIBS Retail Company's sales performance, uncovering customer behavior trends and building predictive models to forecast sales.",
     accent: "from-pastel-peach to-pastel-butter",
     thumbnail: "/dashboards/sales.png",
   },

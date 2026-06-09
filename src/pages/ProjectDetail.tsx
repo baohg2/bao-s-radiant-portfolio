@@ -125,11 +125,25 @@ const ProjectDetail = () => {
         </div>
       </div>
 
+      {/* Overview Section */}
+      {project.overview && (
+        <div className="py-16 px-6 md:px-12 lg:px-24 bg-background border-b border-border/40">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-6">
+              Overview
+            </h2>
+            <p className="text-[1.05rem] text-muted-foreground leading-relaxed max-w-4xl font-normal">
+              {project.overview}
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Bottom half with clean background for result summary */}
       <div className="py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-8">
-            Result summary
+            {project.id === "dibs-sales-analysis" ? "Key findings" : "Result summary"}
           </h2>
           <div className="space-y-8 max-w-4xl">
             {project.results.map((result, index) => (
@@ -155,9 +169,11 @@ const ProjectDetail = () => {
       {project.dashboards && project.dashboards.length > 0 && (
         <div className="py-16 px-6 md:px-12 lg:px-24 bg-[#fdfbf7]/40 border-t border-border/40">
           <div className="max-w-6xl mx-auto">
-            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
-              Dashboards and Key Insights
-            </h2>
+            {project.id !== "dibs-sales-analysis" && (
+              <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
+                Dashboards and Key Insights
+              </h2>
+            )}
             <div className="space-y-12">
               {project.dashboards.map((dash, index) => (
                 <div key={index} className="glass-card rounded-[2rem] p-8 border-primary/10 shadow-sm max-w-4xl hover-lift">
