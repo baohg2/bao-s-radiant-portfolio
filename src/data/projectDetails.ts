@@ -131,7 +131,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
   },
   "dibs-sales-analysis": {
     id: "dibs-sales-analysis",
-    title: "DIBS Sales Analysis & Predictive Modelling",
+    title: "Sales Analysis & Predictive Modeling",
     subtitle: "A data-driven analysis of DIBS Retail Company's sales performance, uncovering trends in customer behaviour and developing a predictive model to forecast sales quantities and support strategic decision-making.",
     primaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling",
     primaryLinkLabel: "View Repository",

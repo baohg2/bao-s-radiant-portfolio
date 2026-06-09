@@ -21,7 +21,7 @@ const projects = [
   {
     id: "dibs-sales-analysis",
     icon: ShoppingBag,
-    title: "DIBS Sales Analysis & Modeling",
+    title: "Sales Analysis & Predictive Modeling",
     summary:
       "A data-driven analysis of DIBS Retail Company's sales performance, uncovering customer behavior trends and building predictive models to forecast sales.",
     accent: "from-pastel-peach to-pastel-butter",
