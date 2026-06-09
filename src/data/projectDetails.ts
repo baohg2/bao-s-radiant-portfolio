@@ -33,10 +33,10 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     id: "australia-demographics",
     title: "Australia’s Demographic Transformation (1996–2016)",
     subtitle: "A data analytics project exploring how Australia's population composition changed over two decades from migration origin and age structure to regional distribution and workforce implications.",
-    primaryLink: "https://github.com/baohg2/Australia-Demographic-Dashboard",
-    primaryLinkLabel: "View Full Report",
-    secondaryLink: "https://github.com/baohg2/Australia-Demographic-Dashboard", // Keep it pointing to repo if dashboard is not separate
-    secondaryLinkLabel: "View Power BI Dashboard",
+    primaryLink: "https://github.com/baohg2/Australia-Demographic-Dashboard/blob/main/Report/Australian%20Demographic%20Report.pdf",
+    primaryLinkLabel: "View Report",
+    secondaryLink: "https://github.com/baohg2/Australia-Demographic-Dashboard/blob/main/Dashboard/Australian%20Demographic%20Dashboard.pbix",
+    secondaryLinkLabel: "View Dashboard",
     kpis: [
       {
         value: "3",
@@ -134,9 +134,9 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     title: "DIBS Sales Analysis & Predictive Modelling",
     subtitle: "A data-driven analysis of DIBS Retail Company's sales performance, uncovering trends in customer behaviour and developing a predictive model to forecast sales quantities and support strategic decision-making.",
     primaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling",
-    primaryLinkLabel: "View GitHub Repository",
-    secondaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling",
-    secondaryLinkLabel: "View R Markdown Report",
+    primaryLinkLabel: "View Repository",
+    secondaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling/blob/main/Report/DIBS%20-%20Sales%20Analysis%20and%20Predictive%20Modelling.pdf",
+    secondaryLinkLabel: "View Report",
     kpis: [
       {
         value: "14.5K+",
@@ -177,8 +177,8 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     id: "credit-card-defaults",
     title: "Predictive Analysis of Credit Card Defaults",
     subtitle: "Develops a predictive machine learning framework to identify credit card default risks using a dataset of 10,000 customers and 23 financial and demographic features.",
-    primaryLink: "https://github.com/baohg2/Predictive-Analysis-of-Credit-Card-Defaults",
-    primaryLinkLabel: "View GitHub Repository",
+    primaryLink: "https://github.com/baohg2/Predictive-Analysis-of-Credit-Card-Defaults/blob/main/Predictive%20Analysis%20of%20Credit%20Card%20Defaults.ipynb",
+    primaryLinkLabel: "View Notebook",
     kpis: [
       {
         value: "10K",
@@ -218,8 +218,8 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     id: "airbnb-price-prediction",
     title: "Airbnb Price Prediction in Melbourne",
     subtitle: "A data cleaning and predictive modeling project targeting Airbnb listing price dynamics in Melbourne, Australia to identify key valuation drivers.",
-    primaryLink: "https://github.com/baohg2/Airbnb---Predict-listing-prices-in-Melbourne-Australia",
-    primaryLinkLabel: "View GitHub Repository",
+    primaryLink: "https://github.com/baohg2/Airbnb---Predict-listing-prices-in-Melbourne-Australia/blob/main/Predicting%20Airbnb%20Listing%20Price%20in%20Melbourne.ipynb",
+    primaryLinkLabel: "View Notebook",
     kpis: [
       {
         value: "15+",
