@@ -79,6 +79,28 @@ export const projectDetails: Record<string, ProjectDetailData> = {
           "Gender split remained equal and stable throughout, consistent with a developed country's birth and mortality patterns",
           "NSW and Victoria consistently led in population size, with Victoria overtaking Queensland as the second largest state in 2011, driven by urban migration and international settlement"
         ]
+      },
+      {
+        title: "Dashboard 2 — Demographic Distribution: Top 10 Countries of Birth",
+        subtitle: "Population trends by country of birth, foreign-born share over time, age group and gender composition, and regional settlement patterns.",
+        points: [
+          "Foreign-born share grew significantly, climbing from 23.3% in 1996 to 28.6% in 2016, indicating nearly 1 in 3 Australians were born overseas",
+          "India and China emerged as rising contenders, with India's share of foreign-born doubling from 7% to 14% and China's rising from 10% to 13%, challenging England's historical position",
+          "China and the Philippines consistently show female-skewed migration, reflecting labour demand in healthcare, education, and services sectors",
+          "Newer migrant cohorts from India and China show much younger age profiles compared to traditional UK-born settlers, providing a vital workforce dividend",
+          "The vast majority of top 10 country migrants choose to settle in high-density metropolitan areas of New South Wales and Victoria"
+        ]
+      },
+      {
+        title: "Dashboard 3 — Shifting in Migrant Origin 1996–2016",
+        subtitle: "Asia vs Europe migration comparison by total population, growth rate, workforce contribution, age profile, and state-level distribution.",
+        points: [
+          "A historic crossover occurred as Asian-born residents grew by 248% to 2.94M, overtaking European-born (2.38M) as the dominant foreign-born cohort by 2016",
+          "Asian-born migrants offset the ageing domestic workforce, with 71% being of working age (25–64) compared to only 62% of the Australian-born base",
+          "78% of European-born migrants are elderly (65+), reflecting legacy post-WWII migration waves and indicating significant future aged care demands",
+          "Both cohorts show a strong preference for eastern states, though Asian-born migrants concentrate even more heavily in metropolitan Sydney and Melbourne",
+          "European migration flatlined or declined in share, while Asian migration maintains an upward exponential curve, transforming Australia's multicultural landscape"
+        ]
       }
     ]
   },
