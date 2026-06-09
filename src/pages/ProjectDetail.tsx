@@ -152,7 +152,7 @@ const ProjectDetail = () => {
                   <h3 className="font-display text-2xl font-semibold text-foreground tracking-tight">
                     {dash.title}
                   </h3>
-                  <p className="text-sm font-semibold text-primary mt-1 mb-6 uppercase tracking-wider">
+                  <p className="text-sm font-semibold text-primary mt-1 mb-6 tracking-wider">
                     {dash.subtitle}
                   </p>
                   <ul className="space-y-4 text-base leading-relaxed text-muted-foreground">
