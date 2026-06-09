@@ -25,6 +25,7 @@ const projects = [
     summary:
       "A data-driven analysis of DIBS Retail Company's sales performance, uncovering customer behavior trends and building predictive models to forecast sales.",
     accent: "from-pastel-peach to-pastel-butter",
+    thumbnail: "/dashboards/sales.png",
   },
   {
     id: "credit-card-defaults",
@@ -33,6 +34,7 @@ const projects = [
     summary:
       "Develops a predictive machine learning framework to identify credit card default risks using a dataset of 10,000 customers and 23 financial features.",
     accent: "from-pastel-mint to-pastel-sky",
+    thumbnail: "/dashboards/credit_card.png",
   },
   {
     id: "airbnb-price-prediction",
@@ -41,6 +43,7 @@ const projects = [
     summary:
       "A data cleaning and predictive modeling project targeting Airbnb listing price dynamics in Melbourne, Australia to identify key valuation drivers.",
     accent: "from-pastel-sky to-pastel-lavender",
+    thumbnail: "/dashboards/airbnb.png",
   },
 ];
 
