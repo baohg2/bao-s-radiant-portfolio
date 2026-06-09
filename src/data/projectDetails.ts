@@ -39,15 +39,15 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     kpis: [
       {
         value: "3",
-        description: "dashboards built to visualise 20 years of Australian demographic and migration trends."
+        description: "dashboards visualizing Australia's demographic and migration changes in 20 years"
       },
       {
-        value: "33%",
-        description: "population growth analysed, with overseas-born groups driving 60% of total increase."
+        value: "~30%",
+        description: "of the population are foreign-born, driving 60% of total national population increase"
       },
       {
         value: "2",
-        description: "migrant cohorts compared, revealing a younger Asian workforce vs. an ageing European group."
+        description: "migrant origin groups compared, younger working-age Asian vs aging European"
       }
     ],
     techStack: [
