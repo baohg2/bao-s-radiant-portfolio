@@ -71,35 +71,35 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     dashboards: [
       {
         title: "Dashboard 1 — Australia's Population Overview 1996–2016",
-        subtitle: "Population growth, gender distribution, age group breakdown, population pyramid, and geographic distribution.",
+        subtitle: "Population growth, population pyramid, geographic distribution, age and gender structure.",
         points: [
-          "Population grew from 18M to 24M (+33%), with the fastest growth period between 2006–2011 at 9.24%, driven by immigration and urbanisation",
-          "Working-age group (25–64) made up 53% of the population in 2016, but the elderly share quietly climbed from 12% to 15%, signalling future pressure on healthcare and pensions",
-          "The population pyramid shifted over time, wider at older age groups by 2016, reflecting falling birth rates and longer life expectancy",
-          "Gender split remained equal and stable throughout, consistent with a developed country's birth and mortality patterns",
-          "NSW and Victoria consistently led in population size, with Victoria overtaking Queensland as the second largest state in 2011, driven by urban migration and international settlement"
+          "Population grew from 18M to 24M (+33%), driven by immigration and urbanization.",
+          "Working-age group made up 53% of the population in 2016, but the elderly share quietly climbed from 12% to 15%, signaling future pressure on healthcare and pensions.",
+          "The population pyramid shifted over time, wider at older age groups by 2016, reflecting falling birth rates and longer life expectancy.",
+          "Gender split remained equal and stable throughout, consistent with a developed country's birth and mortality patterns.",
+          "NSW and Victoria consistently led in population size, following by Victoria and Queensland, driven by urban migration and international settlement."
         ]
       },
       {
-        title: "Dashboard 2 — Demographic Distribution: Top 10 Countries of Birth",
-        subtitle: "Population trends by country of birth, foreign-born share over time, age group and gender composition, and regional settlement patterns.",
+        title: "Dashboard 2 - Demographic Distribution: Top 10 Countries of Birth",
+        subtitle: "Discover population trends, age group and gender composition, and regional settlement patterns among top 10 migrant origins",
         points: [
-          "Foreign-born share grew significantly, climbing from 23.3% in 1996 to 28.6% in 2016, indicating nearly 1 in 3 Australians were born overseas",
-          "India and China emerged as rising contenders, with India's share of foreign-born doubling from 7% to 14% and China's rising from 10% to 13%, challenging England's historical position",
-          "China and the Philippines consistently show female-skewed migration, reflecting labour demand in healthcare, education, and services sectors",
-          "Newer migrant cohorts from India and China show much younger age profiles compared to traditional UK-born settlers, providing a vital workforce dividend",
-          "The vast majority of top 10 country migrants choose to settle in high-density metropolitan areas of New South Wales and Victoria"
+          "Foreign-born share grew significantly 4.2M → 7M (+66%), indicating nearly 1 in 3 Australians were born overseas.",
+          "India and China emerged as rising contenders, challenging England's historical position.",
+          "China and Philippines consistently show female-skewed migration, reflecting labour demand in healthcare, education, and services sectors.",
+          "Newer migrant groups like China, Indian, Malaysia has contributed highly to the working force with over 70%.",
+          "The vast majority of top 10 country migrants settle in New South Wales and Victoria, putting pressure in infrastructure."
         ]
       },
       {
-        title: "Dashboard 3 — Shifting in Migrant Origin 1996–2016",
-        subtitle: "Asia vs Europe migration comparison by total population, growth rate, workforce contribution, age profile, and state-level distribution.",
+        title: "Dashboard 3 - Shifting in Migrant Origin 1996–2016",
+        subtitle: "A comparison of Asian vs European migration over two decades.",
         points: [
-          "A historic crossover occurred as Asian-born residents grew by 248% to 2.94M, overtaking European-born (2.38M) as the dominant foreign-born cohort by 2016",
-          "Asian-born migrants offset the ageing domestic workforce, with 71% being of working age (25–64) compared to only 62% of the Australian-born base",
-          "78% of European-born migrants are elderly (65+), reflecting legacy post-WWII migration waves and indicating significant future aged care demands",
-          "Both cohorts show a strong preference for eastern states, though Asian-born migrants concentrate even more heavily in metropolitan Sydney and Melbourne",
-          "European migration flatlined or declined in share, while Asian migration maintains an upward exponential curve, transforming Australia's multicultural landscape"
+          "Asian-born residents grew by 248% to 2.94M, overtaking European-born (2.38M) by 2016.",
+          "Asian-born migrants offset the ageing domestic workforce, with 71% at working age compared to only 62% of the Australian-born base.",
+          "78% of European-born migrants are elderly (65+), reflecting legacy post-WWII migration waves and indicating significant future aged care demands.",
+          "Both cohorts settle in Eastern states, though Asian-born migrants concentrate heavily in Sydney and Melbourne, linked to education and skilled visa pathways.",
+          "European migration flatlined or declined in share, while Asian migration maintains an upward exponential curve, transforming Australia's multicultural landscape, reshaping labour supply and service demand."
         ]
       }
     ]
