@@ -27,24 +27,24 @@ const ProjectDetail = () => {
   }
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-sky-200 antialiased">
-      {/* Top half with soft light blue background */}
-      <div className="bg-[#cde4ff]/80 pb-16 pt-12 px-6 md:px-12 lg:px-24">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/20 antialiased">
+      {/* Top half with soft gradient background matching the site's organic tones */}
+      <div className="bg-gradient-to-b from-background via-pastel-lavender/25 to-background pb-16 pt-12 px-6 md:px-12 lg:px-24 border-b border-border/40">
         <div className="max-w-6xl mx-auto">
           {/* Back button */}
           <Link
             to="/#projects"
-            className="inline-flex items-center gap-2 text-slate-800 font-semibold hover:text-slate-900 transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-foreground/80 font-semibold hover:text-foreground transition-colors mb-8 group"
           >
             <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
             Back to Projects
           </Link>
 
           {/* Title and Subtitle */}
-          <h1 className="font-sans text-4xl md:text-5xl lg:text-[2.75rem] font-bold tracking-tight text-slate-955 leading-[1.15]">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-[2.75rem] font-bold tracking-tight text-foreground leading-[1.15]">
             {project.title}
           </h1>
-          <p className="mt-5 text-[1.05rem] md:text-lg text-slate-800/90 leading-relaxed max-w-4xl font-normal">
+          <p className="mt-5 text-[1.05rem] md:text-lg text-muted-foreground leading-relaxed max-w-4xl font-normal">
             {project.subtitle}
           </p>
 
@@ -54,7 +54,7 @@ const ProjectDetail = () => {
               href={project.primaryLink}
               target="_blank"
               rel="noreferrer noopener"
-              className="bg-slate-950 text-white hover:bg-slate-900 transition-all font-semibold rounded-full px-6 py-3.5 text-sm inline-flex items-center gap-2 shadow-sm"
+              className="bg-gradient-primary text-primary-foreground hover:opacity-95 transition-all font-semibold rounded-full px-6 py-3.5 text-sm inline-flex items-center gap-2 shadow-soft hover:scale-105"
             >
               {project.primaryLinkLabel}
               <ExternalLink className="h-4 w-4" />
@@ -64,7 +64,7 @@ const ProjectDetail = () => {
                 href={project.secondaryLink}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="bg-[#244b73] text-white hover:bg-[#1a3857] transition-all font-semibold rounded-full px-6 py-3.5 text-sm inline-flex items-center gap-2 shadow-sm"
+                className="bg-gradient-accent text-accent-foreground hover:opacity-95 transition-all font-semibold rounded-full px-6 py-3.5 text-sm inline-flex items-center gap-2 shadow-soft hover:scale-105"
               >
                 {project.secondaryLinkLabel}
                 <ExternalLink className="h-4 w-4" />
@@ -77,28 +77,33 @@ const ProjectDetail = () => {
             {project.kpis.map((kpi, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl p-6 md:p-7 text-center shadow-[0_10px_30px_-10px_rgba(36,75,115,0.08)] border border-slate-100/50 flex flex-col justify-center items-center min-h-[160px]"
+                className="glass-card hover-lift rounded-3xl p-6 md:p-7 text-center border-primary/10 flex flex-col justify-center items-center min-h-[160px] shadow-sm"
               >
-                <div className="font-sans text-4xl md:text-5xl font-bold text-slate-950 tracking-tight mb-3">
+                <div className="font-display text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-3">
                   {kpi.value}
                 </div>
-                <div className="text-[13px] md:text-sm text-slate-600 leading-relaxed font-normal">
-                  {kpi.description}
+                <div className="text-[13px] md:text-sm text-muted-foreground leading-relaxed font-normal">
+                  {project.id === "australia-demographics" ? (
+                    // Keep original wording for demographics if needed, else standard rendering
+                    kpi.description
+                  ) : (
+                    kpi.description
+                  )}
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Tech Stack */}
+          {/* Tech tools and Skills */}
           <div className="mt-12">
-            <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-slate-800 mb-4">
-              Tech stack
+            <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-foreground/80 mb-4">
+              Tech tools and Skills
             </h3>
             <div className="flex flex-wrap gap-2.5">
               {project.techStack.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-white/95 border border-slate-200/90 rounded-full px-4.5 py-1.5 text-xs font-semibold text-slate-800 shadow-sm hover:border-slate-300 transition-colors"
+                  className="bg-card/85 backdrop-blur-md border border-border rounded-full px-4 py-2 text-xs font-semibold text-foreground/90 shadow-sm hover:border-primary/30 transition-colors"
                 >
                   {tech}
                 </span>
@@ -108,23 +113,23 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      {/* Bottom half with clean white background for result summary */}
+      {/* Bottom half with clean background for result summary */}
       <div className="py-16 px-6 md:px-12 lg:px-24">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-sans text-3xl font-bold tracking-tight text-slate-950 mb-8">
+          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-8">
             Result summary
           </h2>
           <div className="space-y-8 max-w-4xl">
             {project.results.map((result, index) => (
               <div key={index} className="flex gap-4 items-start">
-                <div className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-slate-950 text-white font-bold text-sm mt-0.5">
+                <div className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-gradient-primary text-primary-foreground font-bold text-sm mt-0.5 shadow-sm">
                   {index + 1}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-950">
+                  <h3 className="text-lg font-bold text-foreground">
                     {result.title}
                   </h3>
-                  <p className="text-[1.05rem] text-slate-700 leading-relaxed mt-2">
+                  <p className="text-[1.05rem] text-muted-foreground leading-relaxed mt-2">
                     {result.description}
                   </p>
                 </div>
