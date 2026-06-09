@@ -51,8 +51,16 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     ],
     results: [
       {
-        title: "Revealed Australia’s major demographic shift",
-        description: "Identified a 33% national population increase (18M -> 24M) and showed that 60% of this growth was driven by overseas-born residents, reshaping age, gender and settlement patterns across states."
+        title: "Identified Australia's demographic shift",
+        description: "Australia population growth from 18M to 24M (+33%) across five census years, revealing that foreign-born residents grew nearly 3x faster than Australian-born, reshaping age, gender, settlement distributions across states."
+      },
+      {
+        title: "Discovered migration transition",
+        description: "Asian-born residents more than tripled to 2.94M, overtaking European-born (2.38M) as the largest migrant group by 2016, transforming Australia's workforce composition and increasing demand for urban infrastructure."
+      },
+      {
+        title: "Highlighted a growing split between young migrants and ageing settlers",
+        description: "71% of Asian-born migrants are of working age, helping fill labour gaps across the economy. Meanwhile, 78% of European-born migrants are elderly, adding pressure on aged care services alongside a domestic ageing trend."
       }
     ]
   },
