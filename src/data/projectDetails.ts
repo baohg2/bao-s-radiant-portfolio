@@ -19,6 +19,7 @@ export interface ProjectDetailData {
     title: string;
     subtitle: string;
     points: string[];
+    image?: string;
   }[];
 }
 
@@ -72,6 +73,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
       {
         title: "Dashboard 1 — Australia's Population Overview 1996–2016",
         subtitle: "Population growth, population pyramid, geographic distribution, age and gender structure.",
+        image: "/dashboards/demographics-1.png",
         points: [
           "Population grew from 18M to 24M (+33%), driven by immigration and urbanization.",
           "Working-age group made up 53% of the population in 2016, but the elderly share quietly climbed from 12% to 15%, signaling future pressure on healthcare and pensions.",
@@ -83,6 +85,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
       {
         title: "Dashboard 2 - Demographic Distribution: Top 10 Countries of Birth",
         subtitle: "Discover population trends, age group and gender composition, and regional settlement patterns among top 10 migrant origins",
+        image: "/dashboards/demographics-2.png",
         points: [
           "Foreign-born share grew significantly 4.2M → 7M (+66%), indicating nearly 1 in 3 Australians were born overseas.",
           "India and China emerged as rising contenders, challenging England's historical position.",
@@ -94,6 +97,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
       {
         title: "Dashboard 3 - Shifting in Migrant Origin 1996–2016",
         subtitle: "A comparison of Asian vs European migration over two decades.",
+        image: "/dashboards/demographics-3.png",
         points: [
           "Asian-born residents grew by 248% to 2.94M, overtaking European-born (2.38M) by 2016.",
           "Asian-born migrants offset the ageing domestic workforce, with 71% at working age compared to only 62% of the Australian-born base.",
