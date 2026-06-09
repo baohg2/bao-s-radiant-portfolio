@@ -149,22 +149,6 @@ const ProjectDetail = () => {
             <div className="space-y-12">
               {project.dashboards.map((dash, index) => (
                 <div key={index} className="glass-card rounded-[2rem] p-8 border-primary/10 shadow-sm max-w-4xl hover-lift">
-                  {dash.image && (
-                    <div className="mb-6 overflow-hidden rounded-2xl border border-border/40 bg-card/30 shadow-inner">
-                      <img 
-                        src={dash.image} 
-                        alt={dash.title}
-                        className="w-full h-auto object-contain hover:scale-[1.01] transition-transform duration-500"
-                        onError={(e) => {
-                          e.currentTarget.style.display = 'none';
-                          // Also hide the parent wrapper if image fails to load
-                          if (e.currentTarget.parentElement) {
-                            e.currentTarget.parentElement.style.display = 'none';
-                          }
-                        }}
-                      />
-                    </div>
-                  )}
                   <h3 className="font-display text-2xl font-semibold text-foreground tracking-tight">
                     {dash.title}
                   </h3>
@@ -179,6 +163,22 @@ const ProjectDetail = () => {
                       </li>
                     ))}
                   </ul>
+                  {dash.image && (
+                    <div className="mt-8 overflow-hidden rounded-2xl border border-border/40 bg-card/30 shadow-inner">
+                      <img 
+                        src={dash.image} 
+                        alt={dash.title}
+                        className="w-full h-auto object-contain hover:scale-[1.01] transition-transform duration-500"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          // Also hide the parent wrapper if image fails to load
+                          if (e.currentTarget.parentElement) {
+                            e.currentTarget.parentElement.style.display = 'none';
+                          }
+                        }}
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
