@@ -21,6 +21,10 @@ export interface ProjectDetailData {
     points: string[];
     image?: string;
   }[];
+  recommendations?: {
+    title: string;
+    description: string;
+  }[];
 }
 
 export const projectDetails: Record<string, ProjectDetailData> = {
@@ -105,6 +109,20 @@ export const projectDetails: Record<string, ProjectDetailData> = {
           "Both cohorts settle in Eastern states, though Asian-born migrants concentrate heavily in Sydney and Melbourne, linked to education and skilled visa pathways.",
           "European migration flatlined or declined in share, while Asian migration maintains an upward exponential curve, transforming Australia's multicultural landscape, reshaping labour supply and service demand."
         ]
+      }
+    ],
+    recommendations: [
+      {
+        title: "Expand skilled migration frameworks",
+        description: "Build on Migration Strategy 2023 with practical skills recognition reforms, bridging programs and cultural mentorships to channel migrants into high-demand industries and prevent brain waste."
+      },
+      {
+        title: "Scale aged care capacity",
+        description: "Introduce an Essential Skills Visa to ease provider sponsorship costs and invest in technology-driven aging-in-place solutions to meet growing demand without overburdening the younger workforce."
+      },
+      {
+        title: "Invest in east-coast urban infrastructure",
+        description: "Partner with the private sector early to fund housing, transport and public services in NSW and Victoria, and develop satellite cities with high-speed links as long-term relief for affordability pressures (Infrastructure NSW, 2022; Pill et al., 2020)."
       }
     ]
   },

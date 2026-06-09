@@ -185,6 +185,37 @@ const ProjectDetail = () => {
           </div>
         </div>
       )}
+
+      {/* Recommendations Section */}
+      {project.recommendations && project.recommendations.length > 0 && (
+        <div className="py-16 px-6 md:px-12 lg:px-24 border-t border-border/40 bg-background">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-8">
+              Recommendations
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {project.recommendations.map((rec, index) => (
+                <div 
+                  key={index} 
+                  className="glass-card hover-lift rounded-[1.75rem] p-7 border-primary/10 shadow-sm flex flex-col bg-card/45 backdrop-blur-md"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center justify-center shrink-0 w-7 h-7 rounded-full bg-gradient-accent text-accent-foreground font-bold text-xs shadow-sm">
+                      {index + 1}
+                    </div>
+                    <h3 className="text-lg font-bold text-foreground leading-tight">
+                      {rec.title}
+                    </h3>
+                  </div>
+                  <p className="text-[0.95rem] text-muted-foreground leading-relaxed flex-grow">
+                    {rec.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
