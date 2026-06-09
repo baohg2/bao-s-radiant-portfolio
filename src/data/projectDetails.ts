@@ -10,7 +10,8 @@ export interface ProjectDetailData {
     value: string;
     description: string;
   }[];
-  techStack: string[];
+  tools: string[];
+  techniques: string[];
   results: {
     title: string;
     description: string;
@@ -50,10 +51,12 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         description: "migrant origin groups compared, younger working-age Asian vs aging European"
       }
     ],
-    techStack: [
+    tools: [
       "Power BI",
       "DAX",
-      "Power Query",
+      "Power Query"
+    ],
+    techniques: [
       "ETL / Data Transformation",
       "Data Modelling",
       "Demographic Segmentation",
@@ -148,10 +151,12 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         description: "key customer purchasing segments identified based on frequency and average basket size."
       }
     ],
-    techStack: [
+    tools: [
       "R",
       "tidyverse",
-      "ggplot2",
+      "ggplot2"
+    ],
+    techniques: [
       "Predictive Modeling",
       "Customer Segmentation",
       "Sales Forecasting",
@@ -188,10 +193,12 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         description: "financial and demographic features engineered and ranked by risk predictive power."
       }
     ],
-    techStack: [
+    tools: [
       "Python",
       "Scikit-Learn",
-      "XGBoost",
+      "XGBoost"
+    ],
+    techniques: [
       "Feature Engineering",
       "Risk Analytics",
       "Credit Classification"
@@ -227,10 +234,12 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         description: "variance reduction in price predictions by controlling for high-influence geographic factors."
       }
     ],
-    techStack: [
+    tools: [
       "Python",
       "Pandas",
-      "Scikit-Learn",
+      "Scikit-Learn"
+    ],
+    techniques: [
       "Regression Modeling",
       "Data Cleaning",
       "Feature Imputation"

@@ -72,8 +72,42 @@ const ProjectDetail = () => {
             )}
           </div>
 
+          {/* Tools & Techniques */}
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 border-b border-border/20 pb-8">
+            <div>
+              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-foreground/70 mb-3">
+                Tools
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="bg-card/85 backdrop-blur-md border border-border rounded-full px-4 py-2 text-xs font-semibold text-foreground/90 shadow-sm hover:border-primary/30 transition-colors"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-foreground/70 mb-3">
+                Techniques
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.techniques.map((tech) => (
+                  <span
+                    key={tech}
+                    className="bg-card/85 backdrop-blur-md border border-border rounded-full px-4 py-2 text-xs font-semibold text-foreground/90 shadow-sm hover:border-primary/30 transition-colors"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* KPI Cards */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.kpis.map((kpi, index) => (
               <div
                 key={index}
@@ -83,32 +117,10 @@ const ProjectDetail = () => {
                   {kpi.value}
                 </div>
                 <div className="text-[13px] md:text-sm text-muted-foreground leading-relaxed font-normal">
-                  {project.id === "australia-demographics" ? (
-                    // Keep original wording for demographics if needed, else standard rendering
-                    kpi.description
-                  ) : (
-                    kpi.description
-                  )}
+                  {kpi.description}
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Tech tools and Skills */}
-          <div className="mt-12">
-            <h3 className="font-sans text-xs font-bold uppercase tracking-wider text-foreground/80 mb-4">
-              Tech tools and Skills
-            </h3>
-            <div className="flex flex-wrap gap-2.5">
-              {project.techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="bg-card/85 backdrop-blur-md border border-border rounded-full px-4 py-2 text-xs font-semibold text-foreground/90 shadow-sm hover:border-primary/30 transition-colors"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
       </div>
