@@ -23,7 +23,7 @@ const projects = [
     icon: ShoppingBag,
     title: "Sales Analysis & Predictive Modeling",
     summary:
-      "A data-driven analysis of DIBS Retail Company's sales performance, uncovering customer behavior trends and building predictive models to forecast sales.",
+      "Sales performance analysis, identify seasonal and regional sales patterns, uncover trends in customer behaviour and develop a predictive model to forecast sales quantities and support strategic decision-making.",
     accent: "from-pastel-peach to-pastel-butter",
     thumbnail: "/dashboards/sales.png",
   },
