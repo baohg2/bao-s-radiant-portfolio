@@ -132,7 +132,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
   "dibs-sales-analysis": {
     id: "dibs-sales-analysis",
     title: "Sales Analysis & Predictive Modeling",
-    subtitle: "Sales performance analysis, identify seasonal and regional sales patterns, uncover trends in customer behaviour and develop a predictive model to forecast sales quantities and support strategic decision-making.",
+    subtitle: "Analyzed 186,894 historical online sales transactions to uncover patterns in customer behaviour, identify top and underperforming products, and develop a machine learning model capable of forecasting sales quantities. Findings are translated into actionable recommendations across inventory management, sales strategy, marketing, and market expansion.",
     primaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling",
     primaryLinkLabel: "View Repository",
     secondaryLink: "https://github.com/baohg2/DIBS---Sales-Analysis-and-Predictive-Modelling/blob/main/Report/DIBS%20-%20Sales%20Analysis%20and%20Predictive%20Modelling.pdf",
@@ -164,60 +164,65 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     ],
     results: [
       {
-        title: "Uncovered seasonal and hourly ordering patterns",
-        description: "Identified a strong Q4 sales surge peaking in December with 28.1K orders ($4.6M sales) and discovered twin daily order peaks at 11 AM–1 PM and 6 PM–8 PM, establishing optimal marketing and advertising windows."
+        title: "Identified 2 major seasonal and regional patterns",
+        description: "December holiday surge and California dominance"
       },
       {
-        title: "Segmented product portfolio via K-Means",
-        description: "Clustered 19 SKUs into two distinct profiles—high-volume, low-priced accessories (e.g. AAA Batteries) and low-volume, high-priced premium electronics (e.g. MacBook Pro leading at $8M or 22% of sales)—to optimize inventory prioritization."
+        title: "Revealed two daily peak ordering advertisement",
+        description: "11AM–1PM and 6PM–8PM for higher customer engagement"
       },
       {
-        title: "Developed sales quantity forecaster",
-        description: "Trained and compared Linear Regression and Decision Tree models, with the Decision Tree model outperforming (R²: 0.776, MAE: 0.046) to project future sales volumes and prevent stockouts."
+        title: "Discovered high-frequent co-purchased product pairs",
+        description: "Notably iPhone and Lightning Charging Cable"
       }
     ],
     dashboards: [
       {
-        title: "Dashboard 1 — Temporal Sales & Seasonality",
-        subtitle: "Monthly sales trends, daily order fluctuations, and hourly purchase spikes.",
+        title: "Dashboard 1 — Sales Analysis and Customer Behavior",
+        subtitle: "Temporal trends, regional sales distribution, and customer purchase patterns.",
         image: "/dashboards/sales.png",
         points: [
           "Q4 holiday seasons drive major revenue spikes, with December reaching a peak of 28,137 orders and $4.6M in sales (average monthly sales stand at $2.87M).",
           "Hourly orders concentrate heavily around lunch (11 AM–1 PM) and dinner (6 PM–8 PM), indicating ideal digital advertising and promotion windows.",
-          "Daily order patterns show regular weekly cycles, reflecting differences in consumer shopping behavior between weekdays and weekends."
+          "California leads total sales at 39.8%, with San Francisco as the top-performing city, followed by Texas and New York (both at 13.5%)."
         ]
       },
       {
-        title: "Dashboard 2 — Product Performance & Association Analysis",
-        subtitle: "Product sales quantities, revenue contributions, and co-purchase basket analysis.",
-        points: [
-          "Low-cost accessories dominate overall quantities, led by AAA Batteries (31K packs) and AA Batteries (27.6K packs), whereas premium electronics drive revenue.",
-          "MacBook Pro Laptop is the single largest revenue driver, contributing $8M (22% of total sales), followed by iPhone, ThinkPad, and Google Phone.",
-          "Basket analysis identified strong co-purchase pairs, notably iPhone & Lightning Charging Cable (1,002 pairs) and Google Phone & USB-C Cable (985 pairs), presenting bundle opportunities."
-        ]
-      },
-      {
-        title: "Dashboard 3 — Predictive Model & Clustering Analytics",
+        title: "Dashboard 2 — Predictive Modeling",
         subtitle: "K-Means product clustering and sales forecasting model comparison.",
         points: [
           "K-Means successfully grouped the 19 SKUs into Cluster 1 (high-turnover, low-price accessories) and Cluster 2 (low-turnover, premium-priced electronics).",
           "The K-Means cluster labels were fed as features to train predictive models, improving accuracy for both regression and decision trees.",
           "The Decision Tree model achieved superior performance (R²: 0.776, MAE: 0.046) over Linear Regression (R²: 0.763, MAE: 0.048) and was selected to forecast sales quantities."
         ]
+      },
+      {
+        title: "Dashboard 3 — Insights and Recommendation",
+        subtitle: "Actionable recommendations across inventory, sales, marketing, and market expansion.",
+        points: [
+          "Inventory Management — Use the Decision Tree model to forecast demand for peak seasons (Q4). Prioritise stock for high-turnover, low-price items (e.g. AAA Batteries). Review and reduce or discontinue low-performing SKUs such as LG Dryers.",
+          "Sales Strategy — Run targeted seasonal promotions in Q4 and time-limited flash sales during peak hours (11AM–1PM, 6PM–8PM). Bundle frequently co-purchased products (e.g. iPhone + Lightning Charging Cable).",
+          "Marketing — Focus campaigns on high-value regions (San Francisco, California) and peak ad windows. Use K-means cluster insights to personalise messaging for each product segment and implement cross-selling strategies.",
+          "Market Expansion — Enter densely populated states proximate to existing markets - Florida, Pennsylvania, and Illinois - leveraging existing warehouse and logistics infrastructure."
+        ]
       }
     ],
     recommendations: [
       {
-        title: "Optimize inventory and stock prioritization",
-        description: "Deploy the Decision Tree model to forecast peak Q4 demand. Heavily stock high-turnover Cluster 1 items (AAA/AA Batteries) to avoid stockouts, while reducing or discontinuing low-performing SKUs like LG Dryers."
+        title: "Inventory Management",
+        description: "Use the Decision Tree model to forecast demand for peak seasons (Q4). Prioritise stock for high-turnover, low-price items (e.g. AAA Batteries). Review and reduce or discontinue low-performing SKUs such as LG Dryers."
       },
       {
-        title: "Execute time-targeted bundle promotions",
-        description: "Launch time-limited flash sales during daily peak hours (11 AM–1 PM and 6 PM–8 PM). Offer pre-packaged bundle deals for frequently co-purchased items (e.g., iPhone paired with Lightning Cable) to boost average order value."
+        title: "Sales Strategy",
+        description: "Run targeted seasonal promotions in Q4 and time-limited flash sales during peak hours (11AM–1PM, 6PM–8PM). Bundle frequently co-purchased products (e.g. iPhone + Lightning Charging Cable)."
       },
       {
-        title: "Target marketing and expand geodistribution",
-        description: "Allocate ad budgets during peak lunchtime/evening hours. Focus marketing on top sales regions like California (San Francisco). Strategically expand warehouses to densely populated neighboring states like Florida, Illinois, and Pennsylvania."
+        title: "Marketing",
+        description: "Focus campaigns on high-value regions (San Francisco, California) and peak ad windows. Use K-means cluster insights to personalise messaging for each product segment and implement cross-selling strategies."
+      },
+      {
+        title: "Market Expansion",
+        description: "Enter densely populated states proximate to existing markets - Florida, Pennsylvania, and Illinois - leveraging existing warehouse and logistics infrastructure."
       }
     ]
   },

@@ -23,7 +23,7 @@ const projects = [
     icon: ShoppingBag,
     title: "Sales Analysis & Predictive Modeling",
     summary:
-      "Sales performance analysis, identify seasonal and regional sales patterns, uncover trends in customer behaviour and develop a predictive model to forecast sales quantities and support strategic decision-making.",
+      "Analyzed 186,894 historical online sales transactions to uncover patterns in customer behaviour, identify top and underperforming products, and develop a machine learning model capable of forecasting sales quantities. Findings are translated into actionable recommendations across inventory management, sales strategy, marketing, and market expansion.",
     accent: "from-pastel-peach to-pastel-butter",
     thumbnail: "/dashboards/sales.png",
   },
