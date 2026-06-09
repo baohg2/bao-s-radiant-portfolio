@@ -122,7 +122,7 @@ export const projectDetails: Record<string, ProjectDetailData> = {
       },
       {
         title: "Invest in east-coast urban infrastructure",
-        description: "Partner with the private sector early to fund housing, transport and public services in NSW and Victoria, and develop satellite cities with high-speed links as long-term relief for affordability pressures (Infrastructure NSW, 2022; Pill et al., 2020)."
+        description: "Partner with the private sector early to fund housing, transport and public services in NSW and Victoria, and develop satellite cities with high-speed links as long-term relief for affordability pressures."
       }
     ]
   },
