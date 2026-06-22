@@ -244,12 +244,20 @@ const ProjectDetail = () => {
                     {dash.subtitle}
                   </p>
                   <ul className="space-y-4 text-base leading-relaxed text-muted-foreground">
-                    {dash.points.map((pt, ptIndex) => (
-                      <li key={ptIndex} className="flex items-start gap-3">
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                        <span className="text-foreground/85 whitespace-pre-line">{renderFormattedText(pt)}</span>
-                      </li>
-                    ))}
+                    {dash.points.map((pt, ptIndex) => {
+                      const isSubheader = pt.startsWith("###");
+                      const content = isSubheader ? pt.slice(3).trim() : pt;
+                      return (
+                        <li key={ptIndex} className={`flex items-start ${isSubheader ? "mt-5 mb-2 first:mt-0" : "gap-3"}`}>
+                          {!isSubheader && (
+                            <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                          )}
+                          <span className={`${isSubheader ? "text-[1.05rem] font-bold text-foreground" : "text-foreground/85 whitespace-pre-line"}`}>
+                            {renderFormattedText(content)}
+                          </span>
+                        </li>
+                      );
+                    })}
                   </ul>
                   {dash.image && (
                     <div className="mt-8 overflow-hidden rounded-2xl border border-border/40 bg-card/30 shadow-inner">

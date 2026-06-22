@@ -269,9 +269,19 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         title: "2. Model Training & Validation",
         subtitle: "Dataset splitting, feature scaling, and machine learning classifier setup",
         points: [
-          "Carried out stratified train-test splitting (70% train, 30% test) on the first 7,000 records to maintain class balance across training and evaluation phases.",
-          "Applied StandardScaler to standardize numerical features, bringing them to zero mean and unit variance for scale-independent coefficient and distance evaluation.",
-          "Set up classification models using Scikit-Learn: Logistic Regression (C=100.0, lbfgs solver) and K-Nearest Neighbors (n_neighbors=5, Minkowski distance)."
+          "### Create train-test set and validation set",
+          "Use first 7,000 records for training and testing models.",
+          "Use the last 3,000 records for validation.",
+          "### Train-test splitting",
+          "70% train, 30% test split.",
+          "random_state = 31 for reproducibility.",
+          "stratify = y to preserve class proportion.",
+          "### Feature Standardization",
+          "Standardize features using StandardScaler to achieve zero mean and unit variance.",
+          "Fit and transform the training set, then transform the test and validation sets to prevent data leakage.",
+          "### Machine Learning Classifier Setup",
+          "Configure Logistic Regression with C=100.0 and lbfgs solver.",
+          "Set up K-Nearest Neighbors (KNN) classifier with 5 neighbors and Minkowski distance metric."
         ]
       },
       {
