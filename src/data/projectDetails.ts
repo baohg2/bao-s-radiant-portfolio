@@ -256,13 +256,13 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     ],
     dashboards: [
       {
-        title: "1. Data Preprocessing & Categorical Encoding",
+        title: "1. Data Preprocessing & Feature Engineering",
         subtitle: "Mode imputation for nominal/categorical classes, education category consolidation, and gender/marriage transformations",
         points: [
           "Identified and classified 23 predictors into 14 numerical, 7 ordinal, and 2 nominal features to guide appropriate preprocessing strategies.",
-          "Handled missing values systematically: used mean imputation for continuous variables (bill statements, payment amounts) and mode imputation for categorical/demographic features.",
-          "Consolidated undefined/redundant education levels (0, 5, 6) into a single 'Others' (4) category, reducing noise and complexity.",
-          "Reassigned undefined marriage status values (0) to 'Others' (3) and applied dummy encoding with multicollinearity protection (drop_first=True) to yield SEX_FEMALE, MARRIAGE_SINGLE, and MARRIAGE_OTHER."
+          "Handled missing values systematically:\n- mean imputation for continuous variables (**bill statements**, **payment amounts**)\n- mode imputation for categorical variables (**demographic** and **repayment status**).",
+          "Consolidated invalid value in **education levels** (0, 5, 6) into a single 'Others' (4) category, reducing noise and complexity.",
+          "Reassigned undefined **marriage status** values (0) to 'Others' (3) and applied dummy encoding with multicollinearity protection (drop_first=True)."
         ]
       },
       {

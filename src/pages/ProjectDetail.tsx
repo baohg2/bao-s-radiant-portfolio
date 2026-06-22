@@ -3,6 +3,20 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { projectDetails } from "@/data/projectDetails";
 import { useEffect } from "react";
 
+const renderFormattedText = (text: string) => {
+  const parts = text.split(/(\*\*.*?\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return (
+        <strong key={index} className="font-bold text-foreground">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    return part;
+  });
+};
+
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   
@@ -233,7 +247,7 @@ const ProjectDetail = () => {
                     {dash.points.map((pt, ptIndex) => (
                       <li key={ptIndex} className="flex items-start gap-3">
                         <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
-                        <span className="text-foreground/85">{pt}</span>
+                        <span className="text-foreground/85 whitespace-pre-line">{renderFormattedText(pt)}</span>
                       </li>
                     ))}
                   </ul>
