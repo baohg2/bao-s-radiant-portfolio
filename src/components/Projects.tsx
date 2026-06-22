@@ -30,7 +30,7 @@ const projects = [
   {
     id: "credit-card-defaults",
     icon: CreditCard,
-    title: "Credit Card Default Prediction",
+    title: "Predictive Analysis of Credit Card Defaults",
     summary:
       "Develops a predictive machine learning framework to identify credit card default risks using a dataset of 10,000 customers and 23 financial features.",
     accent: "from-pastel-mint to-pastel-sky",

@@ -27,6 +27,8 @@ export interface ProjectDetailData {
     title: string;
     description: string;
   }[];
+  objective?: string;
+  executiveSummary?: string[];
 }
 
 export const projectDetails: Record<string, ProjectDetailData> = {
@@ -219,35 +221,68 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     kpis: [
       {
         value: "10K",
-        description: "customer profiles analyzed across 23 different demographic and payment variables."
+        description: "customer profiles analyzed"
       },
       {
-        value: "84%",
-        description: "ROC-AUC classification score achieved using Random Forest & XGBoost models."
+        value: "80.4%",
+        description: "accuracy score from Logistic Regression, outperformed KNN with higher generalization"
       },
       {
-        value: "23",
-        description: "financial and demographic features engineered and ranked by risk predictive power."
+        value: "Enhanced credit risk assessments",
+        description: "supporting lending decisions and improving risk management"
       }
     ],
     tools: [
       "Python",
-      "Scikit-Learn",
-      "XGBoost"
+      "StandardScaler",
+      "Logistic Regression",
+      "KNN"
     ],
     techniques: [
+      "Data Cleaning",
+      "Data Imputation",
       "Feature Engineering",
-      "Risk Analytics",
-      "Credit Classification"
+      "Dummy Encoding",
+      "Model training",
+      "Machine Learning"
     ],
-    results: [
+    results: [],
+    objective: "The goal of this project is to predict the likelihood of credit card clients defaulting on their payments. By moving beyond traditional binary classification, this analysis aims to refine risk assessment by identifying specific individuals likely to default, thereby enhancing the precision of financial risk management strategies.",
+    executiveSummary: [
+      "Develops a predictive machine learning framework to identify default risks across 10,000 customers using 23 financial and demographic features.",
+      "Employs data preprocessing pipelines including missing value imputation, categorical consolidation, and dummy encoding.",
+      "Trains and evaluates Logistic Regression and K-Nearest Neighbors (KNN) models to determine the optimal default classifier.",
+      "Recommends Logistic Regression for its superior generalization (80.4% test accuracy) and high interpretability critical for financial stakeholders."
+    ],
+    dashboards: [
       {
-        title: "Default risk identification",
-        description: "Engineered a machine learning pipeline that identifies high-risk customers, allowing credit card issuers to flag defaults early and adjust credit limits dynamically."
+        title: "1. Data Preprocessing & Categorical Encoding",
+        subtitle: "Mode imputation for nominal/categorical classes, education category consolidation, and gender/marriage transformations",
+        points: [
+          "Identified and classified 23 predictors into 14 numerical, 7 ordinal, and 2 nominal features to guide appropriate preprocessing strategies.",
+          "Handled missing values systematically: used mean imputation for continuous variables (bill statements, payment amounts) and mode imputation for categorical/demographic features.",
+          "Consolidated undefined/redundant education levels (0, 5, 6) into a single 'Others' (4) category, reducing noise and complexity.",
+          "Reassigned undefined marriage status values (0) to 'Others' (3) and applied dummy encoding with multicollinearity protection (drop_first=True) to yield SEX_FEMALE, MARRIAGE_SINGLE, and MARRIAGE_OTHER."
+        ]
       },
       {
-        title: "Feature importance extraction",
-        description: "Discovered that previous payment delays and utilization ratio are the strongest indicators of default risk, while demographic factors had negligible predictive power."
+        title: "2. Model Training & Validation",
+        subtitle: "Dataset splitting, feature scaling, and machine learning classifier setup",
+        points: [
+          "Carried out stratified train-test splitting (70% train, 30% test) on the first 7,000 records to maintain class balance across training and evaluation phases.",
+          "Applied StandardScaler to standardize numerical features, bringing them to zero mean and unit variance for scale-independent coefficient and distance evaluation.",
+          "Set up classification models using Scikit-Learn: Logistic Regression (C=100.0, lbfgs solver) and K-Nearest Neighbors (n_neighbors=5, Minkowski distance)."
+        ]
+      },
+      {
+        title: "3. Model Comparison & Interpretability",
+        subtitle: "Validation testing, generalization scoring, and final model selection rationale",
+        points: [
+          "Logistic Regression achieved a training accuracy of 82.0% and a test accuracy of 80.4% with a minimal 1.6% gap, confirming reliable generalization.",
+          "KNN achieved slightly higher training accuracy (84.2%) but showed clear signs of overfitting with a drop to 78.4% on the test set.",
+          "Validated both models on an unseen holdout dataset (rows 7,000 to 9,999), confirming Logistic Regression's stability (80.8% accuracy) over KNN (78.2%).",
+          "Recommended Logistic Regression as the optimal model because its transparent coefficients allow risk analysts to explain why clients are flagged for default, a critical requirement in credit risk management."
+        ]
       }
     ]
   },

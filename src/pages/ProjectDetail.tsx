@@ -113,7 +113,11 @@ const ProjectDetail = () => {
                 key={index}
                 className="glass-card hover-lift rounded-3xl p-6 md:p-7 text-center border-primary/10 flex flex-col justify-center items-center min-h-[160px] shadow-sm"
               >
-                <div className="font-display text-4xl md:text-5xl font-bold text-foreground tracking-tight mb-3">
+                <div className={`font-display font-bold text-foreground tracking-tight mb-3 ${
+                  kpi.value.length > 10
+                    ? "text-xl md:text-2xl leading-snug px-2"
+                    : "text-4xl md:text-5xl"
+                }`}>
                   {kpi.value}
                 </div>
                 <div className="text-[13px] md:text-sm text-muted-foreground leading-relaxed font-normal">
@@ -124,6 +128,41 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Executive Summary & Project Objective Section */}
+      {(project.objective || (project.executiveSummary && project.executiveSummary.length > 0)) && (
+        <div className="py-16 px-6 md:px-12 lg:px-24 bg-background border-b border-border/40">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {project.objective && (
+              <div>
+                <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-6">
+                  Project Objective
+                </h2>
+                <p className="text-[1.05rem] text-muted-foreground leading-relaxed font-normal">
+                  {project.objective}
+                </p>
+              </div>
+            )}
+            {project.executiveSummary && project.executiveSummary.length > 0 && (
+              <div>
+                <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-6">
+                  Executive Summary
+                </h2>
+                <ul className="space-y-4">
+                  {project.executiveSummary.map((bullet, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="text-[1.05rem] text-muted-foreground leading-relaxed font-normal">
+                        {bullet}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Overview Section */}
       {project.overview && (
@@ -140,38 +179,45 @@ const ProjectDetail = () => {
       )}
 
       {/* Bottom half with clean background for result summary */}
-      <div className="py-16 px-6 md:px-12 lg:px-24">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-8">
-            {project.id === "dibs-sales-analysis" ? "Key findings" : "Result summary"}
-          </h2>
-          <div className="space-y-8 max-w-4xl">
-            {project.results.map((result, index) => (
-              <div key={index} className="flex gap-4 items-start">
-                <div className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-gradient-primary text-primary-foreground font-bold text-sm mt-0.5 shadow-sm">
-                  {index + 1}
+      {project.results && project.results.length > 0 && (
+        <div className="py-16 px-6 md:px-12 lg:px-24">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-8">
+              {project.id === "dibs-sales-analysis" ? "Key findings" : "Result summary"}
+            </h2>
+            <div className="space-y-8 max-w-4xl">
+              {project.results.map((result, index) => (
+                <div key={index} className="flex gap-4 items-start">
+                  <div className="flex items-center justify-center shrink-0 w-8 h-8 rounded-full bg-gradient-primary text-primary-foreground font-bold text-sm mt-0.5 shadow-sm">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-foreground">
+                      {result.title}
+                    </h3>
+                    <p className="text-[1.05rem] text-muted-foreground leading-relaxed mt-2">
+                      {result.description}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground">
-                    {result.title}
-                  </h3>
-                  <p className="text-[1.05rem] text-muted-foreground leading-relaxed mt-2">
-                    {result.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Dashboards and Key Insights Section */}
       {project.dashboards && project.dashboards.length > 0 && (
         <div className="py-16 px-6 md:px-12 lg:px-24 bg-[#fdfbf7]/40 border-t border-border/40">
           <div className="max-w-6xl mx-auto">
-            {project.id !== "dibs-sales-analysis" && (
+            {project.id !== "dibs-sales-analysis" && project.id !== "credit-card-defaults" && (
               <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
                 Dashboards and Key Insights
+              </h2>
+            )}
+            {project.id === "credit-card-defaults" && (
+              <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
+                Methodology & Model Analysis
               </h2>
             )}
             <div className="space-y-12">
