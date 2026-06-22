@@ -285,13 +285,32 @@ export const projectDetails: Record<string, ProjectDetailData> = {
         ]
       },
       {
-        title: "3. Model Comparison & Interpretability",
-        subtitle: "Validation testing, generalization scoring, and final model selection rationale",
+        title: "3. Model Evaluation and Comparison",
+        subtitle: "Performance metrics comparison and analysis for classification models",
         points: [
-          "Logistic Regression achieved a training accuracy of 82.0% and a test accuracy of 80.4% with a minimal 1.6% gap, confirming reliable generalization.",
-          "KNN achieved slightly higher training accuracy (84.2%) but showed clear signs of overfitting with a drop to 78.4% on the test set.",
-          "Validated both models on an unseen holdout dataset (rows 7,000 to 9,999), confirming Logistic Regression's stability (80.8% accuracy) over KNN (78.2%).",
-          "Recommended Logistic Regression as the optimal model because its transparent coefficients allow risk analysts to explain why clients are flagged for default, a critical requirement in credit risk management."
+          "### Model 1: Logistic Regression",
+          "Train Accuracy: 82.0%",
+          "Test Accuracy: 80.4%",
+          "Validation Accuracy: 80.8%",
+          "Demonstrated excellent generalization with a minimal 1.6% gap between training and testing performance.",
+          "Maintained stable accuracy on the holdout validation dataset, confirming robustness for real-world application.",
+          "### Model 2: K-Nearest Neighbors (KNN)",
+          "Train Accuracy: 84.2%",
+          "Test Accuracy: 78.4%",
+          "Validation Accuracy: 78.2%",
+          "Showed clear signs of overfitting, capturing noise in the training set that did not generalize to unseen data.",
+          "Exhibited lower performance on both test and validation datasets compared to Logistic Regression."
+        ]
+      },
+      {
+        title: "4. Model Recommendation",
+        subtitle: "Operational deployment recommendations for credit risk management",
+        points: [
+          "### Logistic Regression is the recommended model",
+          "Superior generalization performance on unseen test (80.4%) and validation (80.8%) datasets.",
+          "Mitigates overfitting risk, exhibiting a stable accuracy gap of only 1.6% between training and testing.",
+          "Highly interpretable coefficients, allowing risk managers to identify and explain key risk factors behind defaults.",
+          "Transparent and explainable decision boundaries, which are critical for regulatory compliance and strategic lending decisions."
         ]
       }
     ]
