@@ -249,10 +249,10 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     results: [],
     objective: "The goal of this project is to predict the likelihood of credit card clients defaulting on their payments. By moving beyond traditional binary classification, this analysis aims to refine risk assessment by identifying specific individuals likely to default, thereby enhancing the precision of financial risk management strategies.",
     executiveSummary: [
-      "Develops a predictive machine learning framework to identify default risks across 10,000 customers using 23 financial and demographic features.",
-      "Employs data preprocessing pipelines including missing value imputation, categorical consolidation, and dummy encoding.",
-      "Trains and evaluates Logistic Regression and K-Nearest Neighbors (KNN) models to determine the optimal default classifier.",
-      "Recommends Logistic Regression for its superior generalization (80.4% test accuracy) and high interpretability critical for financial stakeholders."
+      "Identifies default risks across 10,000 customers using 23 financial and demographic features.",
+      "Employs data preprocessing pipelines including data imputation and categorical encoding.",
+      "Logistic Regression with 80% accuracy was recommended, outperforming KNN.",
+      "The model predicts customer's default likelihood, supporting better lending decisions and enhance risk management."
     ],
     dashboards: [
       {

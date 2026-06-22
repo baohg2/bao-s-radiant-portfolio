@@ -133,16 +133,6 @@ const ProjectDetail = () => {
       {(project.objective || (project.executiveSummary && project.executiveSummary.length > 0)) && (
         <div className="py-16 px-6 md:px-12 lg:px-24 bg-background border-b border-border/40">
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {project.objective && (
-              <div>
-                <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-6">
-                  Project Objective
-                </h2>
-                <p className="text-[1.05rem] text-muted-foreground leading-relaxed font-normal">
-                  {project.objective}
-                </p>
-              </div>
-            )}
             {project.executiveSummary && project.executiveSummary.length > 0 && (
               <div>
                 <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-6">
@@ -158,6 +148,16 @@ const ProjectDetail = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+            )}
+            {project.objective && (
+              <div>
+                <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-6">
+                  Project Objective
+                </h2>
+                <p className="text-[1.05rem] text-muted-foreground leading-relaxed font-normal">
+                  {project.objective}
+                </p>
               </div>
             )}
           </div>
