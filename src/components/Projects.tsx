@@ -39,7 +39,7 @@ const projects = [
   {
     id: "airbnb-price-prediction",
     icon: Home,
-    title: "Airbnb Price Prediction",
+    title: "Airbnb Price Prediction in Melbourne",
     summary:
       "A data cleaning and predictive modeling project targeting Airbnb listing price dynamics in Melbourne, Australia to identify key valuation drivers.",
     accent: "from-pastel-sky to-pastel-lavender",

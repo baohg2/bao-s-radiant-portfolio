@@ -323,36 +323,105 @@ export const projectDetails: Record<string, ProjectDetailData> = {
     primaryLinkLabel: "View Notebook",
     kpis: [
       {
-        value: "15+",
-        description: "listing features processed, including location, property type, reviews, and amenities."
+        value: "7,000",
+        description: "Airbnb listings analyzed across Melbourne, Australia"
       },
       {
-        value: "91%",
-        description: "of missing data resolved through imputation and structured feature engineering."
+        value: "0.218",
+        description: "optimal holdout test MAE score achieved using the Stacking Regressor"
       },
       {
-        value: "12%",
-        description: "variance reduction in price predictions by controlling for high-influence geographic factors."
+        value: "5",
+        description: "base models ensembled (LightGBM, Random Forest, GBM, SVR, XGBoost) to maximize accuracy"
       }
     ],
     tools: [
       "Python",
       "Pandas",
-      "Scikit-Learn"
+      "Scikit-Learn",
+      "LightGBM",
+      "XGBoost",
+      "TextBlob"
     ],
     techniques: [
-      "Regression Modeling",
-      "Data Cleaning",
-      "Feature Imputation"
+      "Stacking Ensemble",
+      "Hyperparameter Tuning",
+      "Geospatial Analysis",
+      "Sentiment Analysis",
+      "Log Transformation",
+      "Feature Engineering"
     ],
     results: [
       {
-        title: "Melbourne listing price valuation",
-        description: "Built a regression model that accurately estimates Airbnb prices in Melbourne based on localized geo-data, number of bedrooms, and host rating history."
+        title: "Built High-Precision Ensemble Model",
+        description: "Developed a Stacking Regressor combining five tuned base models, achieving a holdout test MAE of 0.218 on the log scale, significantly outperforming any individual model."
       },
       {
-        title: "Identified price drivers",
-        description: "Confirmed that proximity to the central business district (CBD) and rating scores are the most significant positive drivers of listing prices."
+        title: "Identified Primary Pricing Drivers",
+        description: "Confirmed that physical capacity features (accommodates, bedrooms, bathrooms) and room type (Entire home vs. Private room) are the single most critical price predictors."
+      },
+      {
+        title: "Captured Location & Sentiment Premiums",
+        description: "Validated that engineered geospatial features (CBD and station distances) and text sentiment polarity from descriptions directly scale property listing valuations."
+      }
+    ],
+    objective: "The goal of this project is to build a high-precision regression framework to estimate Airbnb listing prices in Melbourne. By understanding localized pricing dynamics, host behaviors, and property capacity features, this analysis aims to identify the key drivers of property valuation and support strategic decisions for hosts (competitive pricing), guests (fair price evaluation), and real estate investors.",
+    executiveSummary: [
+      "Develops a predictive modeling framework to estimate optimal pricing for Airbnb listings in Melbourne using 7,000 listings and over 60 features.",
+      "Performs a comprehensive data cleaning, imputation, and feature engineering pipeline, including geospatial and text sentiment analysis.",
+      "Compares nine individual regression models and four ensemble models using 10-fold cross-validation.",
+      "Recommends a Stacking Regressor combining the top 5 base models, achieving a Mean Absolute Error (MAE) of 0.21968 on the holdout test set on the log scale."
+    ],
+    dashboards: [
+      {
+        title: "1. Data Preprocessing & Feature Engineering",
+        subtitle: "Cleaning string values, systematic missing data imputation, and advanced feature extraction",
+        points: [
+          "Stripped symbols ($, %) and cleaned textual bathrooms format into numeric types.",
+          "Imputed missing values: mean for normal distributions, mode for categorical variables, and median for skewed distributions (beds, bedrooms, review ratings).",
+          "Engineered structural features: **bed_to_bath_ratio**, **guest_comfort_score**, **room_density**, **review_density**, and **occupancy_proxy**.",
+          "Computed geospatial features: Haversine distance to CBD and nearest train stations, keeping minimum distance.",
+          "Conducted text analysis on **host_about** and **description** to extract sentiment polarity and subjectivity."
+        ]
+      },
+      {
+        title: "2. Model Training & Validation",
+        subtitle: "Base regressors setup, randomized search with 10-fold cross-validation, and log transformation",
+        points: [
+          "### Target Log Transformation",
+          "Applied log1p transformation to price to compress the right-skewed scale and reduce outlier impact.",
+          "### Train-Test Splitting",
+          "Split the dataset into training and holdout test sets to evaluate performance and prevent data leakage.",
+          "### Hyperparameter Tuning",
+          "Tuned nine base regressors (Ridge, Lasso, Elastic Net, Decision Trees, Random Forest, GBM, XGBoost, LightGBM, SVR) using RandomizedSearchCV.",
+          "Configured 10-fold cross-validation with negative mean absolute error (MAE) as the optimization metric."
+        ]
+      },
+      {
+        title: "3. Model Evaluation and Comparison",
+        subtitle: "Individual regressor and ensemble performance metrics comparison",
+        points: [
+          "### Base Model Comparison",
+          "LightGBM emerged as the strongest individual model (MAE: 0.22731), closely followed by GBM (MAE: 0.22794) and Random Forest (MAE: 0.23186).",
+          "Support Vector Regression (MAE: 0.27864) and XGBoost (MAE: 0.25496) performed moderately.",
+          "Simpler models (Lasso/Ridge/Elastic Net) underperformed, showing very high MAE values (~0.49690).",
+          "### Ensemble Performance",
+          "Voting and stacking ensembles outperformed all individual regressors, providing higher accuracy and stability.",
+          "Stacking Regressor (All Models) achieved the best test MAE of 0.21802, while Stacking Regressor (Top 5 Models) achieved 0.21968."
+        ]
+      },
+      {
+        title: "4. Model Recommendation & Insights",
+        subtitle: "Final stacking ensemble details and property price drivers",
+        points: [
+          "### Recommended Model",
+          "The Stacking Regressor utilizing the top 5 base models (LGBM, RF, GBM, SVR, XGBoost) is recommended for deployment.",
+          "Meta-learner weights: LightGBM (0.61) and Random Forest (0.40) contribute most, while XGBoost (-0.23) acts as a corrective signal.",
+          "### Key Pricing Drivers",
+          "Capacity features (accommodates, bedrooms, bathrooms) are the strongest positive price predictors.",
+          "Room type (Entire home vs. Private room) is the single most impactful categorical pricing factor.",
+          "Engineered distance metrics (distance to CBD and train stations) significantly scale listing valuations."
+        ]
       }
     ]
   }

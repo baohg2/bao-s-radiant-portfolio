@@ -224,12 +224,12 @@ const ProjectDetail = () => {
       {project.dashboards && project.dashboards.length > 0 && (
         <div className="py-16 px-6 md:px-12 lg:px-24 bg-[#fdfbf7]/40 border-t border-border/40">
           <div className="max-w-6xl mx-auto">
-            {project.id !== "dibs-sales-analysis" && project.id !== "credit-card-defaults" && (
+            {project.id !== "dibs-sales-analysis" && project.id !== "credit-card-defaults" && project.id !== "airbnb-price-prediction" && (
               <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
                 Dashboards and Key Insights
               </h2>
             )}
-            {project.id === "credit-card-defaults" && (
+            {(project.id === "credit-card-defaults" || project.id === "airbnb-price-prediction") && (
               <h2 className="font-display text-3xl font-bold tracking-tight text-foreground mb-10">
                 Methodology & Model Analysis
               </h2>
